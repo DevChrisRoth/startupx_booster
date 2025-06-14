@@ -1,0 +1,1015 @@
+***
+
+# GEM Adult Population Survey (APS) Codebook
+https://www.scribd.com/document/791285939/GEM-codebook
+
+## Page 1
+
+*   **country**: Country
+*   **country\_name**: None
+*   **ctryalp**: Country Internet Alphanumeric (2-letter)
+*   **setid**: Harmonization ID
+*   **id**: Unique Respondent Identification Number
+*   **region**: None
+*   **wbinc**: None
+*   **wbincrev**: None
+*   **yrsurv**: Year survey was administered
+*   **gender**: A. What is your gender?
+*   **age**: B. What is your current age (in years)?
+*   **age7c**: C. Would you be willing to indicate the range that best describes your age? (if exact age not provided)
+*   **age9c**: D. Age range for all respondents recoded from AGE and AGE7c.
+*   **hhsize**: E. How many members make up your permanent household, including you?
+*   **weight**: Country-supplied weight
+*   **weight\_l**: Weight for 18-64 labour force, adjusted to census data
+*   **weight\_a**: Weight for 18-99 adult population, adjusted to census data
+*   **dtsurv**: N. Date of Survey (dd.mm.yy)
+*   **contact**: O. Survey vendor to record how the respondent was interviewed
+*   **callback**: P. Survey Vendor to record on what number call-back attempt the respondent was reached (1, 2, 3?). If interviewed on the first contact, this will be "0".
+*   **gemoccu**: GEMOCCU. GEM harmonized work status with self-employed
+*   **gemwork**: GEMWORK. GEM harmonized work status
+*   **gemwork3**: GEMWORK3. GEM harmonized work status: 3 categories
+*   **gemhhinc**: GEMHHINC. GEM income recoded into thirds
+*   **gemeduc**: GEMEDUC. GEM harmonized educational attainment
+*   **uneduc**: UNEDUC. UN harmonized educational attainment (Categories updated in 2018)
+*   **uneduc97**: UNEDUC97. UN harmonized educational attainment (same as UNEDUC 2017 and earlier)
+*   **knowentr**: Qi1. How many people do you know personally who have started a business or become self-employed in the past 2 years? Would it be none, one, few or many people?
+*   **opportl**: Qi2. In the next six months, there will be good opportunities for starting a business in the area where you live.
+*   **suskilll**: Qi3. You personally have the knowledge, skill and experience required to start a new business.
+*   **fearfaill**: Qi4. You would not start a business for fear it might fail.
+*   **easystartl**: Qi9. In your country, it is easy to start a business.
+
+## Page 2
+
+*   **cpknstop**: QiCP3. How many people do you know personally who have stopped owning and managing a business in 2020 due to the coronavirus pandemic?
+*   **cpknstart**: QiCP4. How many people do you know personally who have started a business in 2020 as a result of the coronavirus pandemic?
+*   **oppism**: Qi11. You rarely see business opportunities, even if you are very knowledgeable in the area.
+*   **proact**: Qi12. Even when you spot a profitable opportunity, you rarely act on it.
+*   **creativ**: Qi13. Other people think you are highly innovative.
+*   **vision**: Qi14. Every decision you make is part of your long-term career plan.
+*   **equalincl**: Qi5. In my country, most people would prefer that everyone had a similar standard of living.
+*   **nbgoodcl**: Qi6. In my country, most people consider starting a new business a desirable career choice.
+*   **nbstatusl**: Qi7. In my country, those successful at starting a new business have a high level of status and respect.
+*   **nbmedial**: Qi8. In my country, you will often see stories in the public media and/or internet about successful new businesses.
+*   **nbsocentl**: Qi10. In my country, you will often see businesses that primarily aim to solve social problems.
+*   **bstart**: Q1A1. Are you, alone or with others, currently trying to start a new business, including any self-employment or selling any goods or services to others?
+*   **bjobst**: Q1A2. Are you, alone or with others, currently trying to start a new business or a new venture for your employer as part of your main employment?
+*   **suacts**: Q1B. Over the past twelve months have you done anything to help start this new business?
+*   **suown**: Q1D1. Will you personally own all, part, or none of this business?
+*   **suowners**: Q1D2. How many people, including yourself, will both own and manage this new business?
+*   **suwage**: Q1E1. Has the new business paid any salaries, wages, or payments in kind, including your own, for more than three months?
+*   **suwageyr**: Q1E2. What was the first year the founders of the business received wages, profits, or payments in kind from this business?
+*   **supay2**: Q1E3. Did the founders of this business receive any wages, profits or payments in kind from this business before January 1, 2017?
+*   **subtype**: Q1F. What kind of business is this?
+*   **sucstloc**: Q1G3A. Will you have any customers in the following locations? In the area where you live?
+*   **sucstnat**: Q1G3B. Will you have any customers in the following locations? Elsewhere in your country?
+
+## Page 3
+
+*   **sucstexp**: Q1G3C. Will you have any customers in the following locations? Outside your country?
+*   **suexport**: Q1G4. What percentage of your annual sales revenues will usually come from customers living outside your country?
+*   **sunewprod**: Q1G5. Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **sunewproc**: Q1G6. Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **sunowjob**: Q1H1. Not counting the owners, how many people are currently working for this business?
+*   **suyr5job**: Q1H2. Not counting owners, how many people will be working for this business five years from now?
+*   **sucrstart**: Q1CP1. Compared to one year ago, do you think starting a business is much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **sucrgrow**: Q1CP2. And compared to one year ago, are your expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **sumotiv1**: Q1K3. Please tell me the extent to which the following statements reflect the reasons you are trying to start a business. To make a difference in the world.
+*   **sumotiv2**: Q1K4. Please tell me the extent to which the following statements reflect the reasons you are trying to start a business. To build great wealth or a very high income.
+*   **sumotiv3**: Q1K8. Please tell me the extent to which the following statements reflect the reasons you are trying to start a business. To continue a family tradition.
+*   **sumotiv4**: Q1K9. Please tell me the extent to which the following statements reflect the reasons you are trying to start a business. To earn a living because jobs are scarce.
+*   **sucpdelay**: Q1CP3a. The coronavirus pandemic has led to a delay in getting the business operational.
+*   **sucpnewopp**: Q1CP3b. The coronavirus pandemic has provided new opportunities that you want to pursue with this business.
+*   **sucpgovres**: Q1CP3c. In your country, the government has so far effectively responded to the economic consequences of the coronavirus pandemic.
+*   **ownmge**: Q2A. Are you, alone or with others, currently the owner of a business you help manage, self-employed, or selling any goods or services to others?
+*   **omjobst**: Q2A2. Are you, alone or with others, currently the owner of a business you help manage for your employer as part of your main employment?
+*   **su\_om**: Q2C. Is this the same business as you referred to in the previous questions, or is it a different business?
+*   **omown**: Q2D1. Do you personally own all, part, or none of this business?
+
+## Page 4
+
+*   **omowners**: Q2D2. How many people, including yourself, both own and manage this business?
+*   **omwageyr**: Q2E2. What was the first year the founders of the business received wages, profits, or payments in kind from this business?
+*   **ompay2**: Q2E3. Did the founders of this business receive any wages, profits or payments in kind from this business before January 1, 2017?
+*   **ombustype**: Q2F. What kind of business is this?
+*   **omcstloc**: Q2G3A. Do you have any customers in the following locations? In the area where you live?
+*   **omcstnat**: Q2G3B. Do you have any customers in the following locations? Elsewhere in your country?
+*   **omcstexp**: Q2G3C. Do you have any customers in the following locations? Outside your country?
+*   **omexport**: Q2G4. What percentage of your annual sales revenues will usually come from customers living outside your country?
+*   **omnewprod**: Q2G5. Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **omnewproc**: Q2G6. Are any of the technologies or procedures used for this product or service new to people in the area where you live, or new to people in your country, or new to the world?
+*   **omnowjob**: Q2H1. Not counting the owners, how many people are currently working for this business?
+*   **omyr5job**: Q2H2. Not counting owners, how many people will be working for this business five years from now?
+*   **omcrstart**: QCP1. Compared to one year ago, do you think starting a business is much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **omcrgrow**: QCP2. And compared to one year ago, are your expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **ommotiv1**: Q2K3. Please tell me the extent to which the following statements reflect the reasons you are involved in this business. To make a difference in the world.
+*   **ommotiv2**: Q2K4. Please tell me the extent to which the following statements reflect the reasons you are involved in this business. To build great wealth or a very high income.
+*   **ommotiv3**: Q2K8. Please tell me the extent to which the following statements reflect the reasons you are involved in this business. To continue a family tradition.
+*   **ommotiv4**: Q2K9. Please tell me the extent to which the following statements reflect the reasons you are involved in this business. To earn a living because jobs are scarce.
+*   **omrstart**: Q2L. Did you start this business? Were you one of its first owners and managers?
+*   **omcrstop**: Q2CP3a. The coronavirus pandemic has caused your business to stop some of its core activities.
+
+## Page 5
+
+*   **omcrnewopp**: Q2CP3b. The coronavirus pandemic has led to new business opportunities that are currently being pursued in your business.
+*   **omcrgovres**: Q2CP3c. In your country, the government has so far effectively responded to the economic consequences of the coronavirus pandemic.
+*   **omcrsupport**: Q2CP3d. Did your business receive, or expects to receive, financial support from the government as a result of the coronavirus pandemic?
+*   **futsup**: Q3A. Are you, alone or with others, expecting to start a new business, including any type of self-employment, within the next three years?
+*   **futsuper**: Q3A2. To what extent is this expectation influenced by the coronavirus pandemic? Is this to large extent, to some extent or is this unrelated to the coronavirus pandemic?
+*   **discent**: Q3B. Have you, in the past 12 months, sold, shut down, discontinued or quit a business you owned and managed, any form of self-employment, or selling goods or services to anyone?
+*   **exbuscon**: Q3C1. Did the business continue its business activities after you quit?
+*   **exreason**: Q3C2. What was the most important reason for quitting this business?
+*   **exreason\_oth**: Q3C2. Other reason for quitting this business?
+*   **busang**: Q4A. Have you, in the past three years, personally provided funds for a new business started by someone else, excluding any purchases of stocks or mutual funds?
+*   **bafund**: Q4B. Approximately how much, in total, have you personally provided to these business start-ups in the past three years, not counting investments in publicly traded stocks or mutual funds?
+*   **barel**: Q4C. What was your relationship with the person that received your most recent personal investment?
+*   **barel\_oth**: Q4C. Other type of relationship with the person that received your most recent personal investment?
+*   **bc\_occufull**: Q5ECP1. Employed by others in full-time work (before corona pandemic)
+*   **bc\_occupart**: Q5ECP2. Employed by others in part-time work (before corona pandemic)
+*   **bc\_occuself**: Q5ECP3. Self-employed (before corona pandemic)
+*   **bc\_occuseek**: Q5ECP7. Seeking employment (before corona pandemic)
+*   **occufull**: Q5E1. Employed by others in full-time work
+*   **occupart**: Q5E2. Employed by others in part-time work
+*   **occuself**: Q5E3. Self-employed
+*   **occuprbs**: Q5E4. Employed in a private business
+*   **occugov**: Q5E5. Employed by the government
+*   **occunfp**: Q5E6. Employed in non-for-profit or voluntary sector
+*   **occuseek**: Q5E7. Seeking employment
+*   **occustu**: Q5E8. A student
+
+## Page 6
+
+*   **occuump**: Q5E9. Unemployed
+*   **occuhome**: Q5E10. Full-time home-maker
+*   **occurt**: Q5E11. Not working because I am retired
+*   **occuds**: Q5E12. Not working because I am disabled
+*   **ipactive**: Q5EE1. EEA: In the last three years, have you been involved in the development of new activities for your main employer?
+*   **su\_om\_ee**: Q5EE1A. EEA: Is this the same business as you referred to in the previous questions, or is it a different business?
+*   **ipactivenow**: Q5EE2. EEA: And are you currently involved in the development of such new activity?
+*   **ipphase1**: Q5EE3. EEA: Phase 1: Have you been actively involved in idea development for a new activity in the past three years?
+*   **ipphase1role**: Q5EE3A. EEA: And could you tell me whether you had a leading or a supporting role in this phase?
+*   **ipphase2**: Q5EE4. EEA: Phase 2: Have you been actively involved in preparation and implementation of a new activity in the past three years?
+*   **ipphase2role**: Q5EE4A. EEA: And could you tell me whether you had a leading or a supporting role in this phase?
+*   **ipinit**: Q5EE5. EEA: Was the most significant new activity you were involved with in the past three years for your main employer initiated by yourself, your employer, or one or more colleagues?
+*   **ipteamsize**: Q5EE6. EEA: How many people have, or have had, a leading role in developing this new activity?
+*   **ipjob5yr**: Q5EE8. EEA: How many people do you expect to be working on the new activity five years after its introduction?
+*   **ipcstloc**: Q5EE9A. EEA: As a result of this new activity, will you have any new customers in the following locations? In the area where you live?
+*   **ipcstnat**: Q5EE9B. EEA: As a result of this new activity, will you have any new customers in the following locations? Elsewhere in your country?
+*   **ipcstexp**: Q5EE9C. EEA: As a result of this new activity, will you have any new customers in the following locations? Outside your country?
+*   **ipexport**: Q5EE11. EEA: What percentage of your annual sales revenues for this project will usually come from customers living outside your country?
+*   **ipnewprod**: Q5EE12. EEA: Are any of your products or services from this new activity new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ipnewproc**: Q5EE13. EEA: Are any of the technologies or procedures used in this new activity new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ipcrstop**: Q5EECP1a. The coronavirus pandemic has caused the business you work for to stop some of its core activities
+
+## Page 7
+
+*   **ipcrnewopp**: Q5EECP1b. The coronavirus pandemic has led to new business opportunities that are currently being pursued in the business you work for.
+*   **ipcrgovres**: Q5EECP1c. In your country, the government has so far effectively responded to the economic consequences of the coronavirus pandemic.
+*   **ipcrsupport**: Q5EECP1d. Did your company receive, or expects to receive, financial support from the government as a result of the coronavirus pandemic?
+*   **doublecount**: H. Do you also have a fixed-line telephone? / Do you also have a mobile telephone?
+*   **cphhinc**: FCP2. In 2020, has the coronavirus pandemic led your household income to strongly decrease, to somewhat decrease, to show no substantial change, to somewhat increase or to strongly increase?
+*   **incontact**: R. Survey vendor to record on which initial contact attempt a household was reached before a targeted respondent was identified (1, 2, 3?). If reached after first attempt, this will be "0".
+*   **eng\_subtype**: Q1F. ENGLISH TRANSLATION. What kind of business is this?
+*   **eng\_ombustype**: Q2F. ENGLISH TRANSLATION. What kind of business is this?
+*   **eng\_exreason\_oth**: Q3C2. ENGLISH TRANSLATION. Other reason for quitting this business?
+*   **eng\_barel\_oth**: Q4C. ENGLISH TRANSLATION. Other type of relationship with the person that received your most recent personal investment?
+*   **subtype\_code**: Q1F. TEAM CODE ISIC 4.0. What kind of business is this? (Option to code response)
+*   **ombustype\_code**: Q2F. TEAM CODE ISIC 4.0. What kind of business is this? (Option to code response)
+*   **sutype\_isic4**: START UP: Business type ISIC version 4, 4digit - coded (Q1F)
+*   **sutype\_r**: START UP: Business type - open ended answer (Q1F)
+*   **omtype\_isic4**: OWN-MANAGE: Business type ISIC version 4, 4digit - coded (Q2F)
+*   **omtype\_r**: OWN-MANAGE: Business type - open ended answer (Q2F)
+*   **exreas\_o**: DISCONT ENTR: Other reason for exit - coded (Q3C2)
+*   **barel\_o**: OWN-MANAGE: Other relationship to entrepr - coded (Q4C)
+*   **sunowjc**: Q2F1 RECODED. Right now how many people, not counting the owners but including exclusive subcontractors, are working for this business?
+*   **suyr5jc**: Q2F2 RECODED. How many people will be working for this business, not counting the owners but including all exclusive subcontractors, when it is five years old?
+*   **omnowjc**: Q3E RECODED. Right now how many people, not counting the owners but including exclusive subcontractors, are working for this business?
+
+## Page 8
+
+*   **omyr5jc**: Q3F RECODED. Five years from now how many people, not counting the owners but including all exclusive subcontractors, will be working for this business?
+*   **smplcnt**: Sample count, total number of cases
+*   **bstartyy**: AUTONOMOUS START-UP (compressed for DK/REF)
+*   **bjobstyy**: BUSINESS JOB INVOLVES START-UP (compressed for DK/REF)
+*   **ownmgeyy**: OWNS AND MANAGES OWN BUSINESS (compressed for DK/REF)
+*   **omjobstyy**: OWNS AND MANAGES A BUSINESS FOR EMPLOYER (compressed for DK/REF)
+*   **busangyy**: Informal investor in the last 3 years
+*   **futsupyy**: Expects to start-up in the next 3 years
+*   **discenyy**: Discontinued a business in the past 12 months, business was NOT continued
+*   **knowenyy**: "How many people do you know personally who have started a business or become self-employed in the past 2 years?
+*   **opportyy**: Sees good opportunities for starting a business in the next 6 months, agree/disagree
+*   **suskilyy**: Has the knowledge, skill and experience required to start a new business, agree/disagree
+*   **frfailyy**: Would not start a business for fear it might fail, agree/other
+*   **easystyy**: In your country, it is easy to start a business, agree/disagree
+*   **oppismyy**: You rarely see business opportunities, even if you are very knowledgeable in the area, 1 to 5 disagree/agree scale.
+*   **proactyy**: Even when you spot a profitable opportunity, you rarely act on it, 1 to 5 disagree/agree scale.
+*   **creativyy**: Other people think you are highly innovative, 1 to 5 disagree/agree scale.
+*   **visionyy**: Every decision you make is part of your long-term career plan, 1 to 5 disagree/agree scale.
+*   **equaliyy**: In your country, most people would prefer that everyone had a similar standard of living, agree/disagree
+*   **nbgoodyy**: In your country, most people consider starting a new business a desirable career choice, agree/disagree
+*   **nbstatyy**: In your country, those successful at starting a new business have a high level of status and respect, agree/disagree
+*   **nbmediyy**: In your country, you will often see stories in the public media and/or internet about successful new businesses, agree/disagree
+*   **indsupyy**: Individual perception to entrepreneurship Index
+*   **culsupyy**: Cultural support for entrepreneurship Index
+*   **sub**: Reports new start-up effort (independent or job)
+*   **suba**: Actively involved in start-up effort
+*   **subo**: Owner in start-up effort
+*   **suboa**: Actively involved in start-up effort and owner
+*   **suboanw**: Actively involved in start-up effort, owner, no wages yet
+
+## Page 9
+
+*   **ombabyx**: Involvement in start-up effort reclassified into own/man young business
+*   **omestbx**: Involvement in start-up effort reclassified into own/man established business
+*   **babybusm**: Manages a business that is up to 42 months old
+*   **babybuso**: Manages and owns a business that is up to 42 months old
+*   **estbbusm**: Manages a business that is older than 42 months
+*   **estbbuso**: Manages and owns a business that is older than 42 months
+*   **suboanwc**: Owning-managing running business reclassified into setting up business
+*   **suboanw1**: Value SUBOANW before reclassification
+*   **babybus1**: Value BABYBUSO before reclassification
+*   **estbbus1**: Value ESTBBUSO before reclassification
+*   **teayy**: Involved in Total early-stage Entrepreneurial Activity
+*   **teayysta**: TEA 20yy: Stage of activity
+*   **anybusow**: Any Business Owner: Nascent New Established
+*   **omwgyr\_c**: Owner-manager: First year salaries, profits etc, compressed
+*   **teayymal**: Involved in TEA, male
+*   **teayyfem**: Involved in TEA, female
+*   **bafundus**: Informal funds in the last 3 years value - US$
+*   **busangvl**: Informal investor in the last 3 years with provided value
+*   **su\_isic4\_4d**: SU: Industry: ISIC version 4, 4-digit code
+*   **bb\_isic4\_4d**: BB: Industry: ISIC version 4, 4-digit code
+*   **eb\_isic4\_4d**: EB: Industry: ISIC version 4, 4-digit code
+*   **teaisic4\_4d**: TEA: Industry: ISIC version 4, 4-digit code
+*   **su\_hitec**: SU: Technology level of the sector
+*   **bb\_hitec**: BB: Technology level of the sector
+*   **eb\_hitec**: EB: Technology level of the sector
+*   **teahitec**: TEA: Technology level of the sector
+*   **exthitec**: Existing firm: Technology level of the sector
+*   **su\_yytec**: SU: Technology sector
+*   **bb\_yytec**: BB: Technology sector
+*   **eb\_yytec**: EB: Technology sector
+*   **teayytec**: TEA: Technology sector
+*   **extyytec**: Existing firm: Technology sector
+*   **su\_sic4c**: SU: FIRM TYPE,4 CATEG ISIC[R4]
+*   **bb\_sic4c**: BB: FIRM TYPE,4 CATEG ISIC[R4]
+*   **eb\_sic4c**: EB: FIRM TYPE,4 CATEG ISIC[R3,90]
+*   **su\_isic4\_1d**: SU: Industry SIC code 1 digit
+*   **bb\_isic4\_1d**: BB: Industry SIC code 1 digit
+*   **eb\_isic4\_1d**: EB: Industry ISIC version 4, 1-digit code
+*   **teaisic4\_1d**: TEA: Industry ISIC version 4, 1-digit code
+*   **teasic4c**: TEA: FIRM TYPE,4 CATEG ISIC[R3,90]
+*   **teayys1c**: TEA, extractive sector
+*   **teayys2c**: TEA, transforming sector
+*   **teayys3c**: TEA, business services sector
+
+## Page 10
+
+*   **teayys4c**: TEA, consumers, culture and society sector
+*   **busowner**: Business owner of running business (no nascent) incl agriculture
+*   **busown\_a**: Business owner of running business (no nascent) incl agriculture & DK
+*   **bo\_exagr**: Business owner of running business (no nascent) excl agriculture
+*   **exit\_rs**: Exit: Reason of exit, 8 categories
+*   **exit\_ctd**: Discontinued a business in the past 12 months, but business continued
+*   **exit\_ent**: Discontinued a business in the past 12 months (includes businesses that were continued)
+*   **eb\_yyj10**: EB: has currently ten or more employees
+*   **su\_job5y**: SU: expected number of jobs in 5 years
+*   **bb\_job5y**: BB: expected number of jobs in 5 years
+*   **eb\_job5y**: EB: expected number of jobs in 5 years
+*   **su\_jobnw**: SU: number of jobs now
+*   **bb\_jobnw**: BB: number of jobs now
+*   **eb\_jobnw**: EB: number of jobs now
+*   **teayyj5y**: TEA: expected number of jobs, 4 categories
+*   **su\_yyj5y**: SU: expected number of jobs, 4 categories
+*   **bb\_yyj5y**: BB: expected number of jobs, 4 categories
+*   **eb\_yyj5y**: EB: expected number of jobs, 4 categories
+*   **teayyjnw**: TEA: current number of jobs, 4 categories
+*   **su\_yyjnw**: SU: current number of jobs, 4 categories
+*   **bb\_yyjnw**: BB: current number of jobs, 4 categories
+*   **eb\_yyjnw**: EB: current number of jobs, 4 categories
+*   **teayyj5yr**: TEA: expected number of jobs, 4 revised categories
+*   **teayyemp**: Involved in TEA, any jobs now or in 5 years
+*   **su\_yyemp**: SU: any jobs now or in 5 years
+*   **bb\_yyemp**: BB: any jobs now or in 5 years
+*   **eb\_yyemp**: EB: any jobs now or in 5 years
+*   **teayyhjg**: Involved in TEA, expects more than 19 jobs in 5 years
+*   **su\_yyhjg**: SU: expects more than 19 jobs in 5 years
+*   **bb\_yyhjg**: BB: expects more than 19 jobs in 5 years
+*   **eb\_yyhjg**: EB: expects more than 19 jobs in 5 years
+*   **su\_jobgr**: SU: Expected job growth (persons) in 5 years
+*   **bb\_jobgr**: BB: Expected job growth (persons) in 5 years
+*   **eb\_jobgr**: EB: Expected job growth (persons) in 5 years
+*   **teajobgr**: TEA: Expected job growth (persons) in 5 years
+*   **su\_jobgp**: SU: Expected job growth (percentage) in 5 years
+*   **bb\_jobgp**: BB: Expected job growth (percentage) in 5 years
+*   **eb\_jobgp**: EB: Expected job growth (percentage) in 5 years
+*   **teajobgp**: TEA: Expected job growth (percentage) in 5 years
+*   **su\_yyjob**: SU: Exp. job growth >=10 persons and >=50 percent
+*   **bb\_yyjob**: BB: Exp. job growth >=10 persons and >=50 percent
+*   **eb\_yyjob**: EB: Exp. job growth >=10 persons and >=50 percent
+*   **teayyjob**: TEA: Exp. job growth >=10 persons and >=50 percent
+
+## Page 11
+
+*   **extyyjob**: Existing firm: Exp. job growth >=10 persons and >=50 percent
+*   **su\_yyexp**: SU: export intensity relative to turnover
+*   **bb\_yyexp**: BB: export intensity relative to turnover
+*   **eb\_yyexp**: EB: export intensity relative to turnover
+*   **teayyexp**: TEA: export intensity relative to turnover
+*   **teayykix**: Involved in TEA, exports more than 10% of turnover
+*   **su\_yykix**: SU: signif export intensity (>10% of turnover)
+*   **bb\_yykix**: BB: signif export intensity (>10% of turnover)
+*   **eb\_yykix**: EB: signif export intensity (>10% of turnover)
+*   **teayyhix**: Involved in TEA, exports more than 50% of turnover
+*   **su\_yyhix**: SU: high export intensity (>50% of turnover)
+*   **bb\_yyhix**: BB: high export intensity (>50% of turnover)
+*   **eb\_yyhix**: EB: high export intensity (>50% of turnover)
+*   **su\_exp4c**: SU: export intensity, 4 categories
+*   **bb\_exp4c**: BB: export intensity, 4 categories
+*   **eb\_exp4c**: EB: export intensity, 4 categories
+*   **teaexp4c**: TEA: export intensity, 4 categories
+*   **su\_owner**: SU: number of owners
+*   **bb\_owner**: BB: number of owners
+*   **eb\_owner**: EB: number of owners
+*   **teaowner**: TEA: number of owners
+*   **teaedhi**: Involved in TEA - at least post secondary education
+*   **teajobex**: TEA: expects more than 5 employees in next five years
+*   **su\_exp5c**: SU: export intensity, 5 categories
+*   **bb\_exp5c**: BB: export intensity, 5 categories
+*   **eb\_exp5c**: EB: export intensity, 5 categories
+*   **teaexp5c**: TEA: export intensity, 5 categories
+*   **teaexpst**: TEA: strong international orientation (more than 25% of revenue from outside country)
+*   **teaexpwk**: TEA: weak international orientation (more than 1% of revenue from outside country)
+*   **frfailop**: Fear of failure (in 18-64 sample perceiving good opportunities to start a business)
+*   **futsupno**: Entrepreneurial intentions (in 18-64 sample that is not involved in entrepreneurial activity)
+*   **teayymot1**: Early-stage entrepreneur motive: To make a difference in the world
+*   **teayymot2**: Early-stage entrepreneur motive: To build greath wealth or a very high income
+*   **teayymot3**: Early-stage entrepreneur motive: To continue a family tradition
+*   **teayymot4**: Early-stage entrepreneur motive: To earn a living because jobs are scarce
+*   **su\_yymot1**: Nascent entrepreneur motive: To make a difference in the world
+*   **su\_yymot2**: Nascent entrepreneur motive: To build greath wealth or a very high income
+
+## Page 12
+
+*   **su\_yymot3**: Nascent entrepreneur motive: To continue a family tradition
+*   **su\_yymot4**: Nascent entrepreneur motive: To earn a living because jobs are scarce
+*   **bb\_yymot1**: New business owner-manager motive: To make a difference in the world
+*   **bb\_yymot2**: New business owner-manager motive: To build greath wealth or a very high income
+*   **bb\_yymot3**: New business owner-manager motive: To continue a family tradition
+*   **bb\_yymot4**: New business owner-manager motive: To earn a living because jobs are scarce
+*   **eb\_yymot1**: Established business owner-manager motive: To make a difference in the world
+*   **eb\_yymot2**: Established business owner-manager motive: To build greath wealth or a very high income
+*   **eb\_yymot3**: Established business owner-manager motive: To continue a family tradition
+*   **eb\_yymot4**: Established business owner-manager motive: To earn a living because jobs are scarce
+*   **teayymot1yes**: Early-stage entrepreneur motive: To make a difference in the world
+*   **teayymot2yes**: Early-stage entrepreneur motive: To build greath wealth or a very high income
+*   **teayymot3yes**: Early-stage entrepreneur motive: To continue a family tradition
+*   **teayymot4yes**: Early-stage entrepreneur motive: To earn a living because jobs are scarce
+*   **su\_yymot1yes**: Nascent entrepreneur motive: To make a difference in the world
+*   **su\_yymot2yes**: Nascent entrepreneur motive: To build greath wealth or a very high income
+*   **su\_yymot3yes**: Nascent entrepreneur motive: To continue a family tradition
+*   **su\_yymot4yes**: Nascent entrepreneur motive: To earn a living because jobs are scarce
+*   **bb\_yymot1yes**: New business owner-manager motive: To make a difference in the world
+*   **bb\_yymot2yes**: New business owner-manager motive: To build greath wealth or a very high income
+*   **bb\_yymot3yes**: New business owner-manager motive: To continue a family tradition
+*   **bb\_yymot4yes**: New business owner-manager motive: To earn a living because jobs are scarce
+*   **eb\_yymot1yes**: Established business owner-manager motive: To make a difference in the world
+*   **eb\_yymot2yes**: Established business owner-manager motive: To build greath wealth or a very high income
+
+## Page 13
+
+*   **eb\_yymot3yes**: Established business owner-manager motive: To continue a family tradition
+*   **eb\_yymot4yes**: Established business owner-manager motive: To earn a living because jobs are scarce
+*   **teayymmot1**: Involved in TEA, make a difference motive, male
+*   **teayyfmoti**: Involved in TEA, make a difference motive, female
+*   **teayymmot2**: Involved in TEA, make money motive, male
+*   **teayyfmoti2**: Involved in TEA, make money motive, female
+*   **teayymmot3**: Involved in TEA, family tradition motive, male
+*   **teayyfmoti3**: Involved in TEA, family tradition motive, female
+*   **teayymmot4**: Involved in TEA, earn living motive, male
+*   **teayyfmoti4**: Involved in TEA, earn living motive, female
+*   **teayymksc**: TEA09: Market Scope
+*   **su\_mksc**: Market scope, currently involved in start-up
+*   **bb\_mksc**: Market scope, owner-manager of new business
+*   **eb\_mksc**: Market scope, owner-manager of established business
+*   **teacstloc**: TEA: Do you have any customers in the area where you live?
+*   **teacstnat**: TEA: Do you have any customers elsewhere in your country?
+*   **teacstexp**: TEA: Do you have any customers outside your country?
+*   **teanewprod**: TEA: Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **teanewproc**: TEA: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **su\_cstloc**: SU: Will you have any customers in the area where you live?
+*   **su\_cstnat**: SU: Will you have any customers elsewhere in your country?
+*   **su\_cstexp**: SU: Will you have any customers outside your country?
+*   **su\_newprod**: SU: Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **su\_newproc**: SU: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **bb\_cstloc**: BB: Do you have any customers in the area where you live?
+*   **bb\_cstnat**: BB: Do you have any customers elsewhere in your country?
+*   **bb\_cstexp**: BB: Do you have any customers outside your country?
+*   **bb\_newprod**: BB: Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **bb\_newproc**: BB: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+
+## Page 14
+
+*   **eb\_cstloc**: EB: Do you have any customers in the area where you live?
+*   **eb\_cstnat**: EB: Do you have any customers elsewhere in your country?
+*   **eb\_cstexp**: EB: Do you have any customers outside your country?
+*   **eb\_newprod**: EB: Are any of your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **eb\_newproc**: EB: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **teaimpact1**: TEA: TEA at least national scope for market and at least national scope for new product or new process
+*   **teaimpact2**: TEA: TEA at least international scope for market and at least international scope for new product or new process
+*   **oppis\_1**: You rarely see business opportunities, even if you are very knowledgeable in the area, agree/disagree
+*   **oppis\_2**: You rarely see business opportunities, even if you are very knowledgeable in the area, agree/other
+*   **oppis\_3**: You rarely see business opportunities, even if you are very knowledgeable in the area, agree/other inc DK
+*   **proac\_1**: Even when you spot a profitable opportunity, you rarely act on it, agree/disagree
+*   **proac\_2**: Even when you spot a profitable opportunity, you rarely act on it, agree/other
+*   **proac\_3**: Even when you spot a profitable opportunity, you rarely act on it, agree/other inc DK
+*   **creati\_1**: Other people think you are highly innovative, agree/disagree
+*   **creati\_2**: Other people think you are highly innovative, agree/other
+*   **creati\_3**: Other people think you are highly innovative, agree/other inc DK
+*   **visio\_1**: Every decision you make is part of your long-term career plan, agree/disagree
+*   **visio\_2**: Every decision you make is part of your long-term career plan, agree/other
+*   **visio\_3**: Every decision you make is part of your long-term career plan, agree/other inc DK
+*   **socen\_1**: In your country, you will often see businesses that primarily aim to solve social problems, agree/disagree
+*   **socen\_2**: In your country, you will often see businesses that primarily aim to solve social problems, agree/other
+*   **socen\_3**: In your country, you will often see businesses that primarily aim to solve social problems, agree/other inc DK
+*   **indspyyya**: Individual perception to eship: zero out of three
+*   **indspyyyb**: Individual perception to eship: one out of three
+*   **indspyyyc**: Individual perception to eship: two out of three
+*   **indspyyyd**: Individual perception to eship: three out of three
+*   **culspyyya**: National cultural support for eship: zero out of three
+
+## Page 15
+
+*   **culspyyyb**: National cultural support for eship: one out of three
+*   **culspyyyc**: National cultural support for eship: two out of three
+*   **culspyyyd**: National cultural support for eship: three out of three
+*   **ipact\_all**: Active as intrapreneur in past three years (base: adult population)
+*   **ipact\_emp**: Active as intrapreneur in past three years (base: employment population)
+*   **ipactnow\_all**: Active as intrapreneur now (base: adult population)
+*   **ipactnow\_emp**: Active as intrapreneur now (base: employment population)
+*   **ipactld\_all**: Active and leading as intrapreneur in past three years (base: adult population)
+*   **ipactld\_emp**: Active and leading as intrapreneur in past three years (base: employment population)
+*   **ipactldnow\_all**: Active and leading as intrapreneur now (base: adult population)
+*   **ipactldnow\_emp**: Active and leading as intrapreneur now (base: employment population)
+*   **ip\_mksc**: Active and leading as intrapreneur in past three years: Market Scope
+*   **ipnow\_mksc**: Active and leading as intrapreneur now: Market Scope
+*   **ip\_newprod**: Active leading intrapreneur last three years: Any products or services from this activity new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ipnow\_newprod**: Active leading intrapreneur now: Any products or services from this activity new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ip\_newproc**: Active leading intrapreneur last three years: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ipnow\_newproc**: Active leading intrapreneur now: Are any of the technologies or procedures used for your products or services new to people in the area where you live, or new to people in your country, or new to the world?
+*   **ipimpact1**: Active and leading as intrapreneur in past three years: at least national scope for market and at least national scope for new product or new process
+*   **ipnowimpact1**: Active and leading as intrapreneur now: at least national scope for market and at least national scope for new product or new process
+*   **ipimpact2**: Active and leading as intrapreneur in past three years: at least international scope for market and at least international scope for new product or new process
+*   **ipnowimpact2**: Active and leading as intrapreneur now: at least international scope for market and at least international scope for new product or new process
+
+## Page 16
+
+*   **ip\_yyexp**: Active intrapreneur in last three years: export intensity relative to turnover
+*   **ipnow\_yyexp**: Active intrapreneur now: export intensity relative to turnover
+*   **ip\_yykix**: Active intrapreneur in last three years: signif export intensity (>10% of turnover)
+*   **ipnow\_yykix**: Active intrapreneur now: signif export intensity (>10% of turnover)
+*   **ip\_yyhix**: Active intrapreneur in last three years: high export intensity (>50% of turnover)
+*   **ipnow\_yyhix**: Active intrapreneur now: high export intensity (>50% of turnover)
+*   **ip\_job5y**: Active intrapreneur in last three years: expected number of jobs in 5 years
+*   **ipnow\_job5y**: Active intrapreneur now: expected number of jobs in 5 years
+*   **ip\_yyj5y**: Active intrapreneur in last three years: expected number of jobs, 4 categories
+*   **ipnow\_yyj5y**: Active intrapreneur now: expected number of jobs, 4 categories
+*   **ip\_yyhjg**: Active intrapreneur in past three years: expects more than 19 jobs in 5 years
+*   **ipnow\_yyhjg**: Active intrapreneur now: expects more than 19 jobs in 5 years
+*   **ip\_exp4c**: Active intrapreneur in last three years: export intensity, 4 categories
+*   **ipnow\_exp4c**: Active intrapreneur now: export intensity, 4 categories
+*   **teayyind**: TEA: Early-stage entrepreneur with independent business
+*   **teayyspon**: TEA: Early-stage entrepreneur with sponsored business (part-owned with employer)
+*   **su\_spon**: SU: Nascent entrepreneur with sponsored business (part-owned with employer)
+*   **su\_ind**: SU: Nascent entrepreneur with independent business
+*   **bb\_spon**: BB: New business owner-manager with sponsored business (part-owned with employer)
+*   **bb\_ind**: BB: New business owner-manager with independent business
+*   **eb\_spon**: EB: New business owner-manager with sponsored business (part-owned with employer)
+*   **eb\_ind**: EB: Established business owner-manager with independent business
+*   **entractall**: Any entrepreneurial or intrapreneurial activity, by combination
+*   **entractred**: Any entrepreneurial or intrapreneurial activity, main combinations
+*   **entractea**: Any early stage or established entrepreneurial or intrapreneurial activity, main combinations
+
+## Page 17
+
+*   **entractea2**: Any early-stage or established entrepreneurial or intrapreneurial activity, reduced combinations
+*   **entractea3**: Early-stage and established entrepreneurial or intrapreneurial activity
+*   **teaactivityr**: TEA: expected number of jobs, 4 categories - Revised Categories
+*   **msurv**: Month of survey
+*   **cpknstart1**: Knows at least one person who has started a business in 2020 as a result of the coronavirus pandemic
+*   **cpknstart2**: Knows at least two persons who have started a business in 2020 as a result of the coronavirus pandemic
+*   **cpknstop1**: Knows at least one person who has stopped owning and managing a business in 2020 due to the coronavirus pandemic
+*   **cpknstop2**: Knows at least two persons who have stopped owning and managing a business in 2020 due to the coronavirus pandemic
+*   **su\_crstart**: Startup (nascent) entrepreneur: starting a business much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **bb\_crstart**: Owner-manager new firm: starting a business much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **eb\_crstart**: Owner-manager estb firm: starting a business much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **teacrstart**: Early-stage entrepreneur: starting a business much more difficult, somewhat more difficult, as difficult as a year ago, somewhat less difficult, or much less difficult?
+*   **su\_crgrow**: Startup (nascent) entrepreneur: expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **bb\_crgrow**: Owner-manager new firm: expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **eb\_crgrow**: Owner-manager estb firm: expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **teacrgrow**: Early-stage entrepreneur: expectations for business growth much lower, somewhat lower, about the same as a year ago, somewhat higher or much higher?
+*   **su\_cpdelay**: Startup (nascent) entrepreneur: coronavirus pandemic has led to a delay in getting the business operational (five items scale)
+*   **su\_cpnewopp**: Startup (nascent) entrepreneur: coronavirus pandemic provided new opportunities that you want to pursue with this business?
+*   **bb\_cpnewopp**: Owner-manager new firm: coronavirus pandemic provided new opportunities that you want to pursue with this business?
+
+## Page 1
+
+*   **country**: 1.0: United States, 6.0: Azad Kashmir, 7.0: Russia, 20.0: Egypt, 27.0: South Africa, 30.0: Greece, 31.0: Netherlands, 32.0: Belgium, 33.0: France, 34.0: Spain, 36.0: Hungary, 39.0: Italy, 40.0: Romania, 41.0: Switzerland, 43.0: Austria, 44.0: United Kingdom, 45.0: Denmark, 46.0: Sweden, 47.0: Norway, 48.0: Poland, 49.0: Germany, 50.0: Isle of Man, 51.0: Peru, 52.0: Mexico, 53.0: Cuba, 54.0: Argentina, 55.0: Brazil, 56.0: Chile, 57.0: Colombia, 58.0: Venezuela, 60.0: Malaysia, 61.0: Australia, 62.0: Indonesia, 63.0: Philippines, 64.0: New Zealand, 65.0: Singapore, 66.0: Thailand, 67.0: Christmas Island, 81.0: Japan, 82.0: South Korea, 84.0: Vietnam, 86.0: China, 90.0: Turkey, 91.0: India, 92.0: Pakistan, 93.0: Afghanistan, 94.0: Sri Lanka, 98.0: Iran, 101.0: Canada, 212.0: Morocco, 213.0: Algeria, 216.0: Tunisia, 218.0: Libya, 220.0: Gambia, 221.0: Senegal, 222.0: Mauritania, 223.0: Mali, 224.0: Guinea, 225.0: Ivory Coast, 226.0: Burkina Faso, 227.0: Niger, 228.0: Togo, 229.0: Benin, 230.0: Mauritius, 231.0: Liberia, 232.0: Sierra Leone, 233.0: Ghana, 234.0: Nigeria, 235.0: Chad, 236.0: Central African Republic, 237.0: Cameroon, 238.0: Cape Verde, 239.0: Sao Tome and Principe, 240.0: Equatorial Guinea, 241.0: Gabon, 242.0: Republic of the Congo, 243.0: Democratic Republic of the Congo, 244.0: Angola, 245.0: Guinea-Bissau, 246.0: Barbados, 248.0: Seychelles, 249.0: Sudan, 250.0: Rwanda, 251.0: Ethiopia, 252.0: Somalia, 253.0: Djibouti, 254.0: Kenya, 255.0: Tanzania, 256.0: Uganda, 257.0: Burundi, 258.0: Mozambique, 259.0: Bahamas, 260.0: Zambia, 261.0: Madagascar, 262.0: Mayotte, 263.0: Zimbabwe, 264.0: Anguilla, 265.0: Malawi, 266.0: Lesotho, 267.0: Botswana, 268.0: Antigua and Barbuda, 269.0: Comoros, 270.0: Namibia, 271.0: Swaziland, 284.0: British Virgin Islands, 290.0: Saint Helena, 291.0: Eritrea, 297.0: Aruba, 298.0: Faroe Islands, 299.0: Greenland, 340.0: US Virgin Islands, 345.0: Cayman Islands, 350.0: Gibraltar, 351.0: Portugal, 352.0: Luxembourg, 353.0: Ireland, 354.0: Iceland, 355.0: Albania, 356.0: Malta, 357.0: Cyprus, 358.0: Finland, 359.0: Bulgaria, 370.0: Lithuania, 371.0: Latvia, 372.0: Estonia, 373.0: Moldova, 374.0: Armenia, 375.0: Belarus, 376.0: Andorra, 377.0: Monaco, 378.0: San Marino, 380.0: Ukraine, 381.0: Serbia, 382.0: Montenegro, 383.0:
+
+## Page 2
+
+*   Kosovo, 385.0: Croatia, 386.0: Slovenia, 387.0: Bosnia and Herzegovina, 389.0: Macedonia, 420.0: Czech Republic, 421.0: Slovakia, 423.0: Liechtenstein, 441.0: Bermuda, 473.0: Grenada, 500.0: Falkland Islands, 501.0: Belize, 502.0: Guatemala, 503.0: El Salvador, 504.0: Honduras, 505.0: Nicaragua, 506.0: Costa Rica, 507.0: Panama, 508.0: Saint Pierre and Miquelon, 509.0: Haiti, 590.0: Saint Barthelemy, 591.0: Bolivia, 592.0: Guyana, 593.0: Ecuador, 595.0: Paraguay, 597.0: Suriname, 598.0: Uruguay, 599.0: Netherlands Antilles, 600.0: Saint Martin, 649.0: Turks and Caicos Islands, 664.0: Montserrat, 669.0: Northern Mariana Islands, 670.0: Timor-Leste, 671.0: Guam, 672.0: Antarctica, Norfolk Island, 673.0: Brunei, 674.0: Nauru, 675.0: Papua New Guinea, 676.0: Tonga, 677.0: Solomon Islands, 678.0: Vanuatu, 679.0: Fiji, 680.0: Palau, 681.0: Wallis and Futuna, 682.0: Cook Islands, 683.0: Niue, 684.0: American Samoa, 685.0: Samoa, 686.0: Kiribati, 687.0: New Caledonia, 688.0: Tuvalu, 689.0: French Polynesia, 690.0: Tokelau, 691.0: Micronesia, 692.0: Marshall Islands, 701.0: Kazakhstan, 758.0: Saint Lucia, 767.0: Dominica, 770.0: OECS, 784.0: Saint Vincent and the Grenadines, 787.0: Puerto Rico, 809.0: Dominican Republic, 850.0: North Korea, 852.0: Hong Kong, 853.0: Macau, 855.0: Cambodia, 856.0: Laos, 868.0: Trinidad and Tobago, 869.0: Saint Kitts and Nevis, 870.0: Pitcairn Islands, 876.0: Jamaica, 880.0: Bangladesh, 886.0: Taiwan, 960.0: Maldives, 961.0: Lebanon, 962.0: Jordan, 963.0: Syria, 964.0: Iraq, 965.0: Kuwait, 966.0: Saudi Arabia, 967.0: Yemen, 968.0: Oman, 970.0: Gaza Strip & West Bank, 971.0: United Arab Emirates, 972.0: Israel, 973.0: Bahrain, 974.0: Qatar, 975.0: Bhutan, 976.0: Mongolia, 977.0: Nepal, 992.0: Tajikistan, 993.0: Turkmenistan, 994.0: Azerbaijan, 995.0: Georgia, 996.0: Kyrgyzstan, 998.0: Uzbekistan
+*   **ctryalp**: BA: Bosnia and Herzegovina, CA: Canada, MA: Morocco, NA: Namibia, PA: Panama, QA: Qatar, SA: Saudi Arabia, ZA: South Africa, BB: Barbados, LB: Lebanon, EC: Ecuador, BD: Bangladesh, ID: Indonesia, AE: United Arab Emirates, BE: Belgium, DE: Germany, EE: Estonia, GE: Georgia, IE: Ireland, ME: Montenegro, PE: Peru, SE: Sweden, VE: Venezuela, YE: Yemen, BF: Burkina Faso, BG: Bulgaria, EG: Egypt, NG: Nigeria, SG: Singapore, TG: Toga, UG: Uganda, BH: Bahrain, CH: Switzerland, GH: Ghana, PH: Philippines, TH: Thailand, FI: Finland, SI: Slovenia, DK: Denmark, HK: Hong Kong, MK: Macedonia, PK: Pakistan, SK: Slovakia, UK: United Kingdom, XK: Kosovo, CL: Chile, IL: Israel, NL: Netherlands, PL: Poland, JM: Jamaica, OM: Oman, ZM: Zambia, CN: China, IN: India, TN: Tunisia, VN: Vietnam, AO: Angola, BO: Bolivia, CO: Colombia, DO: Dominican Republic, JO: Jordan, NO: Norway, RO: Romania, TO: Tonga, JP: Japan, AR: Argentina, BR: Brazil, CR: Costa Rica, FR: France, GR: Greece, HR: Croatia, IR: Iran, KR: Korea, PR: Puerto Rico, SR: Suriname, TR: Turkey, ES: Spain, IS: Iceland, PS: West Bank & Gaza Strip, US: United States, AT: Austria, GT: Guatemala, IT: Italy, LT: Lithuania, PT: Portugal, TT: Trinidad &
+
+## Page 3
+
+*   Tobago, AU: Australia, HU: Hungary, LU: Luxembourg, RU: Russia, VU: Vanuatu, YU: Serbia, LV: Latvia, SV: El Salvador, BW: Botswana, KW: Kuwait, MW: Malawi, SW: Switzerland, TW: Taiwan, MX: Mexico, CY: Cyprus, LY: Libya, MY: Malaysia, SY: Syria, UY: Uruguay, AZ: Azores, CZ: Czech Republic, DZ: Algeria, KZ: Kazakstan, NZ: New Zealand, SZ: Shenzhen*
+*   **region**: 1.0: Middle East & Africa, 2.0: Central & East Asia, 3.0: Latin America & Caribbean, 4.0: Europe & N America
+*   **wbinc**: 1.0: Low, 2.0: Lower Middle, 3.0: Upper Middle, 4.0: High
+*   **wbincrev**: 1.0: Low, 2.0: Middle, 3.0: High
+*   **gender**: -2.0: Refused, -1.0: Don't Know, 1.0: Male, 2.0: Female
+*   **age**: -2.0: Refused, -1.0: Don't Know
+*   **age7c**: -2.0: Missing/Refused, 1.0: Below 18, 2.0: 18-24, 3.0: 25-34, 4.0: 35-44, 5.0: 45-54, 6.0: 55-64, 7.0: 65-99
+*   **age9c**: 1.0: 0-17, 2.0: 18-24, 3.0: 25-34, 4.0: 35-44, 5.0: 45-54, 6.0: 55-64, 7.0: 65-120
+*   **hhsize**: -2.0: Refused, -1.0: Don't Know
+*   **contact**: 1.0: Face-to-face, 2.0: Fixed-phone line, 3.0: Mobile-phone line, 4.0: Other
+*   **gemoccu**: -2.0: Missing/cannot code, 1.0: Full: full or part time, 2.0: Part time only, 3.0: Retired, disabled, 4.0: Homemaker, 5.0: Student, 6.0: Not working, 7.0: Self-employed, 8.0: Other
+*   **gemwork**: -2.0: Missing/cannot code, 1.0: Full: full or part time (includes self-employment), 2.0: Part time only, 3.0: Retired, disabled, 4.0: Homemaker, 5.0: Student, 6.0: Not working, 7.0: Other
+*   **gemwork3**: -2.0: Missing, cannot classify, 10.0: Work:F-T, P-T, 20.0: Not working, 30.0: Retired students
+*   **gemhhinc**: -2.0: Miss/cannot code, 33.0: Lowest 33%tile, 3467.0: Middle 33%tile, 68100.0: Upper 33%tile
+*   **gemeduc**: -2.0: CAN NOT CODE, 0.0: NONE, 111.0: SOME SECONDARY, 1212.0: SECONDARY DEGREE, 1316.0: POST SECONDARY, 1720.0: GRAD EXP
+*   **uneduc**: 0.0: Pre-primary education, 1.0: Primary education or first stage of basic education, 2.0: Lower secondary or second stage of basic education, 3.0: (Upper) secondary education, 4.0: Post-secondary non-tertiary education, 5.0: Short-cycle tertiary education, 6.0: Bachelor or equivalent, 7.0: Master or equivalent, 8.0: Doctor or equivalent
+*   **uneduc97**: -2.0: Missing, 0.0: Pre-primary education, 1.0: Primary education or first stage of basic education, 2.0: Lower secondary or second stage of basic education, 3.0: (Upper) secondary education, 4.0: Post-secondary non-tertiary education, 5.0: First stage of tertiary education, 6.0: Second stage of tertiary education
+*   **knowentr**: -2.0: Refused, -1.0: Don't know, 0.0: None, 1.0: One, 2.0: 2 to 4, 3.0: 5 or more
+*   **opportl**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+
+## Page 4
+
+*   **suskilll**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **fearfaill**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **easystartl**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **cpknstop**: -2.0: Refused, -1.0: Don't know, 0.0: None, 1.0: One, 2.0: 2 to 4, 3.0: 5 or more
+*   **cpknstart**: -2.0: Refused, -1.0: Don't know, 0.0: None, 1.0: One, 2.0: 2 to 4, 3.0: 5 or more
+*   **oppism**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **proact**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **creativ**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **vision**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **equalincl**: -2.0: Refused, -1.0: Don't know, 1.0: Disagree a lot, 2.0: Disagree a little, 3.0: Neither agree nor disagree, 4.0: Agree a little, 5.0: Agree a lot
+*   **nbgoodcl**: -2.0: Refused, -1.0: Don't know, 1.0: Disagree a lot, 2.0: Disagree a little, 3.0: Neither agree nor disagree, 4.0: Agree a little, 5.0: Agree a lot
+*   **nbstatusl**: -2.0: Refused, -1.0: Don't know, 1.0: Disagree a lot, 2.0: Disagree a little, 3.0: Neither agree nor disagree, 4.0: Agree a little, 5.0: Agree a lot
+*   **nbmedial**: -2.0: Refused, -1.0: Don't know, 1.0: Disagree a lot, 2.0: Disagree a little, 3.0: Neither agree nor disagree, 4.0: Agree a little, 5.0: Agree a lot
+*   **nbsocentl**: -2.0: Refused, -1.0: Don't know, 1.0: Disagree a lot, 2.0: Disagree a little, 3.0: Neither agree nor disagree, 4.0: Agree a little, 5.0: Agree a lot
+*   **bstart**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **bjobst**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **suacts**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **suown**: -2.0: Refused, -1.0: Don't Know, 1.0: All, 2.0: Part, 3.0: None
+*   **suowners**: -2.0: Refused, -1.0: Don't Know
+*   **suwage**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **suwageyr**: -3.0: No payments yet, -2.0: Refused, -1.0: Don't Know
+*   **supay2**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **sucstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+
+## Page 5
+
+*   **sucstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **sucstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **suexport**: -2.0: Refused, -1.0: Don't Know, 1.0: More than 90%, 2.0: 76 to 90%, 3.0: 51 to 75%, 4.0: 26 to 50%, 5.0: 11 to 25%, 6.0: 10% or less, 7.0: None
+*   **sunewprod**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **sunewproc**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **sunowjob**: -2.0: Refused, -1.0: Don't Know
+*   **suyr5job**: -2.0: Refused, -1.0: Don't Know
+*   **sucrstart**: -2.0: Refused, -1.0: Don't Know, 1.0: Much less difficult, 2.0: Somewhat less difficult, 3.0: As difficult as a year ago, 4.0: Somewhat more difficult, 5.0: Much more difficult
+*   **sucrgrow**: -2.0: Refused, -1.0: Don't Know, 1.0: Much higher, 2.0: Somewhat higher, 3.0: About the same as a year ago, 4.0: Somewhat lower, 5.0: Much lower
+*   **sumotiv1**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sumotiv2**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sumotiv3**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sumotiv4**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sucpdelay**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sucpnewopp**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **sucpgovres**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ownmge**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **omjobst**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **su\_om**: -2.0: Refused, -1.0: Don't Know, 1.0: Same business, 2.0: Different business
+*   **omown**: -3.0: Does not apply, -2.0: Refused, -1.0: Don't Know, 1.0: All, 2.0: Part, 3.0: None
+*   **omowners**: -2.0: Refused, -1.0: Don't Know
+*   **omwageyr**: -3.0: No payments yet, -2.0: Refused, -1.0: Don't Know
+*   **ompay2**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+
+## Page 6
+
+*   **omcstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **omcstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **omcstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **omexport**: -2.0: Refused, -1.0: Don't Know, 1.0: More than 90%, 2.0: 76 to 90%, 3.0: 51 to 75%, 4.0: 26 to 50%, 5.0: 11 to 25%, 6.0: 10% or less, 7.0: None
+*   **omnewprod**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **omnewproc**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **omnowjob**: -2.0: Refused, -1.0: Don't Know
+*   **omyr5job**: -2.0: Refused, -1.0: Don't Know
+*   **omcrstart**: -2.0: Refused, -1.0: Don't Know, 1.0: Much less difficult, 2.0: Somewhat less difficult, 3.0: As difficult as a year ago, 4.0: Somewhat more difficult, 5.0: Much more difficult
+*   **omcrgrow**: -2.0: Refused, -1.0: Don't Know, 1.0: Much higher, 2.0: Somewhat higher, 3.0: About the same as a year ago, 4.0: Somewhat lower, 5.0: Much lower
+*   **ommotiv1**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ommotiv2**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ommotiv3**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ommotiv4**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **omrstart**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **omcrstop**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **omcrnewopp**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **omcrgovres**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **omcrsupport**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **futsup**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **futsuper**: -2.0: Refused, -1.0: Don't Know, 1.0: Unrelated, 2.0: To some extent, 3.0: To large extent
+*   **discent**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **exbuscon**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No, 3.0: Business continued but activities changed
+
+## Page 7
+
+*   **exreason**: -2.0: Refused, -1.0: Don't know, 1.0: Opportunity to sell, 2.0: Business not profitable, 3.0: Problems getting finance, 4.0: Another job or business opportunity, 5.0: Exit was planned in advance, 6.0: Retirement, 7.0: Family or personal reasons, 8.0: Incident, 9.0: Other, 11.0: Government/tax policy/bureaucracy, 12.0: The coronavirus pandemic
+*   **busang**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **bafund**: -3.0: Haven't provided funds, -2.0: Refused, -1.0: Don't Know
+*   **barel**: -2.0: Refused, -1.0: Don't Know, 1.0: Close family member, 2.0: Some other relative, 3.0: A work colleague, 4.0: A friend or neighbor, 5.0: A stranger with a good business idea, 6.0: Other
+*   **bc\_occufull**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **bc\_occupart**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **bc\_occuself**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **bc\_occuseek**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **occufull**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occupart**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuself**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuprbs**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occugov**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occunfp**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuseek**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occustu**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuump**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuhome**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occurt**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **occuds**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipactive**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **su\_om\_ee**: -2.0: Refused, -1.0: Don't Know, 1.0: Same business, 2.0: Different business
+*   **ipactivenow**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipphase1**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipphase1role**: -2.0: Refused, -1.0: Don't Know, 1.0: Leading role, 2.0: Supporting role, 3.0: Both
+*   **ipphase2**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipphase2role**: -2.0: Refused, -1.0: Don't Know, 1.0: Leading role, 2.0: Supporting role, 3.0: Both
+*   **ipinit**: -2.0: Refused, -1.0: Don't Know, 1.0: Myself (respondent), 2.0: Employer, 3.0: Colleague(s), 4.0: Combination
+*   **ipteamsize**: -2.0: Refused, -1.0: Don't Know
+*   **ipjob5yr**: -2.0: Refused, -1.0: Don't Know
+*   **ipcstloc**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipcstnat**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipcstexp**: -2.0: Refused, -1.0: Don't Know, 1.0: Yes, 2.0: No
+*   **ipexport**: -2.0: Refused, -1.0: Don't Know, 1.0: More than 90%, 2.0: 76 to 90%, 3.0: 51 to 75%, 4.0: 26 to 50%, 5.0: 11 to 25%, 6.0: 10% or less, 7.0: None
+
+## Page 8
+
+*   **ipnewprod**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **ipnewproc**: -2.0: Refused, -1.0: Don't Know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **ipcrstop**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ipcrnewopp**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ipcrgovres**: -2.0: Refused, -1.0: Don't Know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **ipcrsupport**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **doublecount**: -2.0: Refused, -1.0: Don't know, 1.0: Yes, 2.0: No
+*   **cphhinc**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly decrease, 2.0: Somewhat decrease, 3.0: No substantial change, 4.0: Somewhat increase, 5.0: Strongly increase
+*   **exreas\_o**: 1.0: An opportunity to sell the business, 2.0: The business was not profitable, 3.0: Problems getting finance, 4.0: Another job or business opportunity, 5.0: The exit was planned in advance, 6.0: Retirement, 7.0: Family or personal reasons, 8.0: An incident, 9.0: Other, 11.0: Government/tax policy/bureaucracy, 12.0: The coronavirus pandemic
+*   **barel\_o**: -2.0: Refused, -1.0: Don't know, 1.0: Close family member, 2.0: Some other relative, 3.0: A work colleague, 4.0: A friend or neighbor, 5.0: A stranger with a good business idea, 6.0: Other
+*   **sunowjc**: 0.0: No jobs, 1.0: 1 job, 2.0: 2-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **suyr5jc**: 0.0: No jobs, 1.0: 1 job, 2.0: 2-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **omnowjc**: 0.0: No jobs, 1.0: 1 job, 2.0: 2-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **omyr5jc**: 0.0: No jobs, 1.0: 1 job, 2.0: 2-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **bstartyy**: 0.0: NO, 1.0: YES
+*   **bjobstyy**: 0.0: NO, 1.0: YES
+*   **ownmgeyy**: 0.0: NO, 1.0: YES
+*   **omjobstyy**: 0.0: NO, 1.0: YES
+*   **busangyy**: 0.0: NO, 1.0: YES
+*   **futsupyy**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **discenyy**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **knowenyy**: -2.0: Refused, -1.0: Don't know, 0.0: None, 1.0: At least one
+*   **opportyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+
+## Page 9
+
+*   **suskilyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **frfailyy**: 0.0: DISAGREE, 1.0: AGREE, 8.0: DONT KNOW / NO OPINION, 9.0: REFUSED
+*   **easystyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **oppismyy**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **proactyy**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **creativyy**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **visionyy**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **equaliyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **nbgoodyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **nbstatyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **nbmediyy**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: AGREE
+*   **indsupyy**: -2.0: Refused, 0.0: None/three, 1.0: One/three, 2.0: Two/three, 3.0: Three/three
+*   **culsupyy**: -2.0: Refused, 0.0: None/three, 1.0: One/three, 2.0: Two/three, 3.0: Three/three
+*   **sub**: 0.0: No, 1.0: Yes
+*   **suba**: 0.0: No, 1.0: Yes
+*   **subo**: 0.0: No, 1.0: Yes
+*   **suboa**: 0.0: No, 1.0: Yes
+*   **suboanw**: 0.0: No, 1.0: Yes
+*   **ombabyx**: 0.0: No, 1.0: Yes
+*   **omestbx**: 0.0: No, 1.0: Yes
+*   **babybusm**: 0.0: No, 1.0: Yes
+*   **babybuso**: 0.0: No, 1.0: Yes
+*   **estbbusm**: 0.0: No, 1.0: Yes
+*   **estbbuso**: 0.0: No, 1.0: Yes
+*   **suboanwc**: 0.0: No, 1.0: Yes
+*   **suboanw1**: 0.0: No, 1.0: Yes
+*   **babybus1**: 0.0: No, 1.0: Yes
+*   **estbbus1**: 0.0: No, 1.0: Yes
+*   **teayy**: 0.0: No, 1.0: Yes
+*   **teayysta**: 1.0: Nascent entrepreneur, 2.0: Baby business owner-manager
+*   **anybusow**: 0.0: No, 1.0: Yes
+
+## Page 10
+
+*   **teayymal**: -2.0: Refused, 0.0: No, 1.0: Yes
+*   **teayyfem**: -2.0: Refused, 0.0: No, 1.0: Yes
+*   **busangvl**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **su\_isic4\_4d**: -2.0: Refused, -1.0: Don't know
+*   **bb\_isic4\_4d**: -2.0: Refused, -1.0: Don't know
+*   **eb\_isic4\_4d**: -2.0: Refused, -1.0: Don't know
+*   **teaisic4\_4d**: -2.0: Refused, -1.0: Don't know
+*   **su\_hitec**: 0.0: NO/LOW TECHNOLOGIES, 1.0: MEDIUM-TECH, 2.0: HIGH-TECH
+*   **bb\_hitec**: 0.0: NO/LOW TECHNOLOGIES, 1.0: MEDIUM-TECH, 2.0: HIGH-TECH
+*   **eb\_hitec**: 0.0: No/low technologies, 1.0: Medium-tech, 2.0: High-tech
+*   **teahitec**: 0.0: No/low technologies, 1.0: Medium-tech, 2.0: High-tech
+*   **exthitec**: 0.0: NO/LOW TECHNOLOGIES, 1.0: MEDIUM-TECH, 2.0: HIGH-TECH
+*   **su\_yytec**: 0.0: NO/LOW TECHNOLOGY SECTOR, 1.0: MEDIUM- OR HIGH-TECH SECTOR
+*   **bb\_yytec**: 0.0: NO/LOW TECHNOLOGY SECTOR, 1.0: MEDIUM- OR HIGH-TECH SECTOR
+*   **eb\_yytec**: 0.0: NO/LOW TECHNOLOGY SECTOR, 1.0: MEDIUM- OR HIGH-TECH SECTOR
+*   **teayytec**: 0.0: NO/LOW TECHNOLOGY SECTOR, 1.0: MEDIUM- OR HIGH-TECH SECTOR
+*   **extyytec**: 0.0: NO/LOW TECHNOLOGY SECTOR, 1.0: MEDIUM- OR HIGH-TECH SECTOR
+*   **su\_sic4c**: 1.0: EXTRACTIVE SECTOR, 2.0: TRANSFORMING SECTOR, 3.0: BUSINESS SERVICES, 4.0: CONSUMERS, CULTURE AND SOCIETY, 9.0: NOT CLASSIFIED/MISSING
+*   **bb\_sic4c**: 1.0: EXTRACTIVE SECTOR, 2.0: TRANSFORMING SECTOR, 3.0: BUSINESS SERVICES, 4.0: CONSUMERS, CULTURE AND SOCIETY, 9.0: NOT CLASSIFIED/MISSING
+*   **eb\_sic4c**: -2.0: Not classified/Missing, 1.0: Extractive, 2.0: Transforming, 3.0: Business Serv, 4.0: Consumer Oriented
+*   **su\_isic4\_1d**: 1.0: AGRICULTURE,FORESTRY,FISHING, 2.0: MINING,CONSTRUCTION, 3.0: MANUFACTURING, 4.0: UTILISATION, TRANSPORT, STORAGE, 5.0: WHOLESALE TRADE, 6.0: RETAIL TRADE, HOTELS & RESTAURANTS, 7.0: INFORMATION AND COMMUNICATION, 8.0: FINANCIAL INTERMEDIATION, REAL ESTATE ACTIVITIES, 9.0: PROFESSIONAL SERVICES, 10.0: ADMINISTRATIVE SERVICES, 11.0: GOVERNMENT, HEALTH, EDUCATION, SOCIAL SERVICES, 12.0: PERSONAL/CONSUMER SERVICE ACTIVITIES, 99.0: NOT CLASSIFIED/MISSING
+*   **bb\_isic4\_1d**: 1.0: AGRICULTURE,FORESTRY,FISHING, 2.0: MINING,CONSTRUCTION, 3.0: MANUFACTURING, 4.0: UTILISATION, TRANSPORT, STORAGE, 5.0: WHOLESALE TRADE, 6.0: RETAIL TRADE, HOTELS & RESTAURANTS, 7.0: INFORMATION AND COMMUNICATION, 8.0: FINANCIAL INTERMEDIATION, REAL ESTATE
+
+## Page 11
+
+*   ACTIVITIES, 9.0: PROFESSIONAL SERVICES, 10.0: ADMINISTRATIVE SERVICES, 11.0: GOVERNMENT, HEALTH, EDUCATION, SOCIAL SERVICES, 12.0: PERSONAL/CONSUMER SERVICE ACTIVITIES, 99.0: NOT CLASSIFIED/MISSING
+*   **eb\_isic4\_1d**: -2.0: NOT CLASSIFIED/MISSING, 1.0: AGRICULTURE,FORESTRY,FISHING, 2.0: MINING,CONSTRUCTION, 3.0: MANUFACTURING, 4.0: UTILISATION, TRANSPORT, STORAGE, 5.0: WHOLESALE TRADE, 6.0: RETAIL TRADE, HOTELS & RESTAURANTS, 7.0: INFORMATION AND COMMUNICATION, 8.0: FINANCIAL INTERMEDIATION, REAL ESTATE ACTIVITIES, 9.0: PROFESSIONAL SERVICES, 10.0: ADMINISTRATIVE SERVICES, 11.0: GOVERNMENT, HEALTH, EDUCATION, SOCIAL SERVICES, 12.0: PERSONAL/CONSUMER SERVICE ACTIVITIES
+*   **teaisic4\_1d**: -2.0: NOT CLASSIFIED/MISSING, 1.0: AGRICULTURE,FORESTRY,FISHING, 2.0: MINING,CONSTRUCTION, 3.0: MANUFACTURING, 4.0: UTILISATION, TRANSPORT, STORAGE, 5.0: WHOLESALE TRADE, 6.0: RETAIL TRADE, HOTELS & RESTAURANTS, 7.0: INFORMATION AND COMMUNICATION, 8.0: FINANCIAL INTERMEDIATION, REAL ESTATE ACTIVITIES, 9.0: PROFESSIONAL SERVICES, 10.0: ADMINISTRATIVE SERVICES, 11.0: GOVERNMENT, HEALTH, EDUCATION, SOCIAL SERVICES, 12.0: PERSONAL/CONSUMER SERVICE ACTIVITIES
+*   **teasic4c**: -2.0: Not classified/Missing, 1.0: Extractive, 2.0: Transforming, 3.0: Business Serv, 4.0: Consumer Oriented
+*   **teayys1c**: 0.0: NO, 1.0: YES
+*   **teayys2c**: 0.0: NO, 1.0: YES
+*   **teayys3c**: 0.0: NO, 1.0: YES
+*   **teayys4c**: 0.0: NO, 1.0: YES
+*   **busowner**: 0.0: No, 1.0: Yes
+*   **busown\_a**: 0.0: No, 1.0: Yes
+*   **bo\_exagr**: 0.0: No, 1.0: Yes
+*   **exit\_rs**: -3.0: Other, -2.0: Refused, -1.0: Don't know, 1.0: Opportunity to sell, 2.0: Business not profitable, 3.0: Problems getting finance, 4.0: Another job or business opportunity, 5.0: Exit was planned in advance, 6.0: Retirement, 7.0: Family or personal reasons, 8.0: Incident, 11.0: Government/tax policy/bureaucracy, 12.0: The coronavirus pandemic
+*   **exit\_ctd**: 0.0: No, 1.0: Yes
+*   **exit\_ent**: 0.0: No, 1.0: Yes
+*   **teayyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **su\_yyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **bb\_yyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **eb\_yyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **teayyjnw**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **su\_yyjnw**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **bb\_yyjnw**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **eb\_yyjnw**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **teayyj5yr**: 1.0: No job, 2.0: 1-4 jobs, 3.0: 5-9 jobs, 4.0: 10+ jobs
+*   **teayyemp**: 0.0: No, 1.0: Yes
+
+## Page 12
+
+*   **su\_yyemp**: 0.0: NO, 1.0: YES
+*   **bb\_yyemp**: 0.0: NO, 1.0: YES
+*   **eb\_yyemp**: 0.0: NO, 1.0: YES
+*   **teayyhjg**: 0.0: No, 1.0: Yes
+*   **su\_yyhjg**: 0.0: NO, 1.0: YES
+*   **bb\_yyhjg**: 0.0: NO, 1.0: YES
+*   **eb\_yyhjg**: 0.0: No, 1.0: Yes
+*   **su\_yyjob**: 0.0: No, 1.0: Yes
+*   **bb\_yyjob**: 0.0: No, 1.0: Yes
+*   **eb\_yyjob**: 0.0: No, 1.0: Yes
+*   **teayyjob**: 0.0: No, 1.0: Yes
+*   **extyyjob**: 0.0: No, 1.0: Yes
+*   **su\_yyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **bb\_yyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **eb\_yyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **teayyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **teayykix**: 0.0: NO, 1.0: YES
+*   **su\_yykix**: 0.0: NO, 1.0: YES
+*   **bb\_yykix**: 0.0: NO, 1.0: YES
+*   **eb\_yykix**: 0.0: NO, 1.0: YES
+*   **teayyhix**: 0.0: NO, 1.0: YES
+*   **su\_yyhix**: 0.0: NO, 1.0: YES
+*   **bb\_yyhix**: 0.0: NO, 1.0: YES
+*   **eb\_yyhix**: 0.0: NO, 1.0: YES
+*   **su\_exp4c**: -2.0: Refused, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None
+*   **bb\_exp4c**: -2.0: Refused, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None
+*   **eb\_exp4c**: -2.0: Refused, -1.0: Don't Know, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None
+*   **teaexp4c**: -2.0: Refused, -1.0: Don't Know, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None
+*   **teaedhi**: 0.0: No, 1.0: Yes
+*   **teajobex**: 0.0: No, 1.0: Yes
+*   **su\_exp5c**: -2.0: Refused, -1.0: Don't Know, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 11%-25%, 4.0: 1%-11%, 5.0: None
+*   **bb\_exp5c**: -2.0: Refused, -1.0: Don't Know, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 11%-25%, 4.0: 1%-11%, 5.0: None
+*   **eb\_exp5c**: -2.0: Refused, -1.0: Don't Know, 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 11%-25%, 4.0: 1%-11%, 5.0: None
+
+## Page 13
+
+*   **teaexp5c**: 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 11%-25%, 4.0: 1%-10%, 5.0: None
+*   **teaexpst**: 0.0: No, 1.0: Yes
+*   **teaexpwk**: 0.0: No, 1.0: Yes
+*   **frfailop**: 0.0: No, 1.0: Yes
+*   **futsupno**: 0.0: No, 1.0: Yes
+*   **teayymot1**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teayymot2**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teayymot3**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teayymot4**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_yymot1**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_yymot2**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_yymot3**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_yymot4**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_yymot1**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_yymot2**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_yymot3**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_yymot4**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_yymot1**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_yymot2**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+
+## Page 14
+
+*   **eb\_yymot3**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_yymot4**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teayymot1yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **teayymot2yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **teayymot3yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **teayymot4yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **su\_yymot1yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **su\_yymot2yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **su\_yymot3yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **su\_yymot4yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **bb\_yymot1yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **bb\_yymot2yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **bb\_yymot3yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **bb\_yymot4yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **eb\_yymot1yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **eb\_yymot2yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **eb\_yymot3yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **eb\_yymot4yes**: 0.0: No/No opinion, 1.0: Yes, 8.0: Dont know, 9.0: Refused
+*   **teayymmot1**: 0.0: NO, 1.0: YES
+*   **teayyfmoti1**: 0.0: NO, 1.0: YES
+*   **teayymmot2**: 0.0: NO, 1.0: YES
+*   **teayyfmoti2**: 0.0: NO, 1.0: YES
+*   **teayymmot3**: 0.0: NO, 1.0: YES
+*   **teayyfmoti3**: 0.0: NO, 1.0: YES
+*   **teayymmot4**: 0.0: NO, 1.0: YES
+*   **teayyfmoti4**: 0.0: NO, 1.0: YES
+*   **teayymksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+
+## Page 15
+
+*   **su\_mksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+*   **bb\_mksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+*   **eb\_mksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+*   **teacstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **teacstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **teacstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **teanewprod**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **teanewproc**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **su\_cstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **su\_cstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **su\_cstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **su\_newprod**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **su\_newproc**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **bb\_cstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **bb\_cstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **bb\_cstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **bb\_newprod**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **bb\_newproc**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **eb\_cstloc**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **eb\_cstnat**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **eb\_cstexp**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **eb\_newprod**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **eb\_newproc**: -2.0: Refused, -1.0: Don't know, 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world
+*   **teaimpact1**: 0.0: No, 1.0: Yes
+*   **teaimpact2**: 0.0: No, 1.0: Yes
+*   **oppis\_1**: -2.0: Refused, -1.0: Don't Know, 0.0: Disagree, 1.0: Agree
+*   **oppis\_2**: -2.0: Refused, -1.0: Don't Know, 0.0: Disagree/no opinion, 1.0: Agree
+*   **oppis\_3**: -2.0: Refused, 0.0: Disagree/no opinion/DK, 1.0: Agree
+*   **proac\_1**: -2.0: Refused, -1.0: Don't Know, 0.0: Disagree, 1.0: Agree
+
+## Page 16
+
+*   **proac\_2**: -2.0: Refused, -1.0: Don't Know, 0.0: Disagree/no opinion, 1.0: Agree
+*   **proac\_3**: -2.0: Refused, 0.0: Disagree/no opinion/DK, 1.0: Agree
+*   **creati\_1**: -2.0: Refused, -1.0: Don't Know, 0.0: DISAGREE, 1.0: Agree
+*   **creati\_2**: -2.0: Refused, -1.0: Don't know, 0.0: DISAGREE/no opinion, 1.0: AGREE
+*   **creati\_3**: -2.0: Refused, 0.0: Disagree/no opinion/DK, 1.0: Agree
+*   **visio\_1**: -2.0: Refused, -1.0: Don't know, 0.0: DISAGREE, 1.0: Agree
+*   **visio\_2**: -2.0: Refused, -1.0: Don't know, 0.0: DISAGREE/no opinion, 1.0: AGREE
+*   **visio\_3**: -2.0: Refused, 0.0: DISAGREE/no opinion/DK, 1.0: AGREE
+*   **socen\_1**: -2.0: Refused, -1.0: Don't know, 0.0: DISAGREE, 1.0: Agree
+*   **socen\_2**: -2.0: Refused, -1.0: Don't know, 0.0: DISAGREE/no opinion, 1.0: AGREE
+*   **socen\_3**: -2.0: Refused, 0.0: DISAGREE/no opinion/DK, 1.0: AGREE
+*   **indspyyya**: 0.0: NO, 1.0: YES
+*   **indspyyyb**: 0.0: NO, 1.0: YES
+*   **indspyyyc**: 0.0: NO, 1.0: YES
+*   **indspyyyd**: 0.0: NO, 1.0: YES
+*   **culspyyya**: 0.0: NO, 1.0: YES
+*   **culspyyyb**: 0.0: NO, 1.0: YES
+*   **culspyyyc**: 0.0: NO, 1.0: YES
+*   **culspyyyd**: 0.0: NO, 1.0: YES
+*   **ipact\_all**: 0.0: No, 1.0: Yes
+*   **ipact\_emp**: 0.0: No, 1.0: Yes
+*   **ipactnow\_all**: 0.0: No, 1.0: Yes
+*   **ipactnow\_emp**: 0.0: No, 1.0: Yes
+*   **ipactld\_all**: 0.0: No, 1.0: Yes
+*   **ipactld\_emp**: 0.0: No, 1.0: Yes
+*   **ipactldnow\_all**: 0.0: No, 1.0: Yes
+*   **ipactldnow\_emp**: 0.0: No, 1.0: Yes
+*   **ip\_mksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+*   **ipnow\_mksc**: 1.0: Local market scope only, 2.0: National market scope, 3.0: International market scope, 4.0: Scope not known
+*   **ip\_newprod**: 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world, 8.0: Dont Know, 9.0: Refused
+*   **ipnow\_newprod**: 1.0: No, not new product or service, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world, 8.0: Dont Know, 9.0: Refused
+*   **ip\_newproc**: 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world, 8.0: Dont Know, 9.0: Refused
+*   **ipnow\_newproc**: 1.0: No, not new technologies or procedures, 2.0: New to people in the area where you live, 3.0: New to people in your country, 4.0: New to the world, 8.0: Dont Know, 9.0: Refused
+*   **ipimpact1**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **ipnowimpact1**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+
+## Page 17
+
+*   **ipimpact2**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **ipnowimpact2**: -2.0: Refused, -1.0: Don't Know, 0.0: No, 1.0: Yes
+*   **ip\_yyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **ipnow\_yyexp**: 1.0: Export over 90%, 2.0: Export 76-90%, 3.0: Export 51-75%, 4.0: Export 26-50%, 5.0: Export 11-25%, 6.0: Export 1-10%, 7.0: No export, 9.0: Missing (dk/ref)
+*   **ip\_yykix**: 0.0: NO, 1.0: YES
+*   **ipnow\_yykix**: 0.0: NO, 1.0: YES
+*   **ip\_yyhix**: 0.0: NO, 1.0: YES
+*   **ipnow\_yyhix**: 0.0: NO, 1.0: YES
+*   **ip\_yyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **ipnow\_yyj5y**: 1.0: No job, 2.0: 1-5 jobs, 3.0: 6-19 jobs, 4.0: 20+ jobs
+*   **ip\_yyhjg**: 0.0: NO, 1.0: YES
+*   **ipnow\_yyhjg**: 0.0: NO, 1.0: YES
+*   **ip\_exp4c**: 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None, 9.0: Dont know / Refused
+*   **ipnow\_exp4c**: 1.0: 76%-100%, 2.0: 26%-75%, 3.0: 1%-25%, 4.0: None, 9.0: Dont know / Refused
+*   **teayyind**: 0.0: NO, 1.0: YES
+*   **teayyspon**: 0.0: NO, 1.0: YES
+*   **su\_spon**: 0.0: NO, 1.0: YES
+*   **su\_ind**: 0.0: NO, 1.0: YES
+*   **bb\_spon**: 0.0: NO, 1.0: YES
+*   **bb\_ind**: 0.0: NO, 1.0: YES
+*   **eb\_spon**: 0.0: NO, 1.0: YES
+*   **eb\_ind**: 0.0: NO, 1.0: YES
+*   **entractall**: 0.0: No activity, 1.0: Independent nascent entrepreneur only, 2.0: Sponsored nascent entrepreneur only, 3.0: Independent new business owner-manager only, 4.0: Sponsored new business owner-manager only, 5.0: Independent established business owner-manager only, 6.0: Sponsored established business owner-manager only, 7.0: Independent nascent and new business owner-manager, 8.0: Sponsored nascent and independent new business owner-manager, 9.0: Independent nascent and sponsored new business owner-manager, 10.0: Sponsored nascent and new business owner-manager, 11.0: Independent nascent and established business owner-manager, 12.0: Independent nascent and sponsored established business owner-manager, 13.0: Sponsored nascent and independent established business owner-manager, 14.0: Sponsored nascent and established business owner-manager, 15.0: Independent new and established business owner-manager, 16.0: Independent new and sponsored established business owner-manager, 17.0: Sponsored new and independent established business owner-manager, 18.0: Sponsored new and established business owner-manager, 19.0: Independent nascent, new and established business owner-manager, 20.0: Independent
+
+## Page 18
+
+*   nascent and new and sponsored established business owner-manager, 21.0: Sponsored nascent and independent new and established business owner-manager, 22.0: Sponsored nascent and established and independent new business owner-manager, 23.0: Independent nascent and established and sponsored new business owner-manager, 24.0: Independent nascent and sponsored new and established business owner-manager, 25.0: Sponsored nascent and new and independent established business owner-manager, 26.0: Sponsored nascent, new and established business owner-manager, 27.0: Active leading intrapreneur now only, 28.0: Independent nascent entrepreneur and active leading intrapreneur now, 29.0: Sponsored nascent entrepreneur and active leading intrapreneur now, 30.0: Independent new business owner-manager and active leading intrapreneur now, 31.0: Sponsored new business owner-manager and active leading intrapreneur now, 32.0: Independent established business owner-manager and active leading intrapreneur now, 33.0: Sponsored established business owner-manager and active leading intrapreneur now, 34.0: Independent nascent and new business owner-manager and active leading intrapreneur now, 35.0: Sponsored nascent and independent new business owner-manager and active leading intrapreneur now, 36.0: Independent nascent and sponsored new business owner-manager and active leading intrapreneur now, 37.0: Sponsored nascent and sponsored new business owner-manager and active leading intrapreneur now, 38.0: Independent nascent and independent established business owner-manager and active leading intrapreneur now, 39.0: Independent nascent and sponsored established business owner-manager and active leading intrapreneur now, 40.0: Sponsored nascent and independent established business owner-manager and active leading intrapreneur now, 41.0: Sponsored nascent and sponsored established business owner-manager and active leading intrapreneur now, 42.0: Independent new and established business owner-manager and active leading intrapreneur now, 43.0: Independent new and sponsored established business owner-manager and active leading intrapreneur now, 44.0: Sponsored new and independent established business owner-manager and active leading intrapreneur now, 45.0: Sponsored new and established business owner-manager and active leading intrapreneur now, 46.0: Independent nascent, new and established business owner-manager and active leading intrapreneur now, 47.0: Independent nascent and new and sponsored established business owner-manager and active leading intrapreneur now, 48.0: Sponsored nascent and independent new and established business owner-manager and active leading intrapreneur now, 49.0: Sponsored nascent and established and independent new business owner-manager and active leading intrapreneur now, 50.0: Independent nascent and established and sponsored new business owner-manager and active leading intrapreneur now, 51.0: Independent nascent and sponsored new
+
+## Page 19
+
+*   and established business owner-manager and active leading intrapreneur now, 52.0: Sponsored nascent and new and independent established business owner-manager and active leading intrapreneur now, 53.0: Sponsored nascent, new and established business owner-manager and active leading intrapreneur now
+*   **entractred**: 0.0: No activity, 1.0: Independent nascent entrepreneur only, 2.0: Sponsored nascent entrepreneur only, 3.0: Independent new business owner-manager only, 4.0: Sponsored new business owner-manager only, 5.0: Independent established business owner-manager only, 6.0: Sponsored established business owner-manager, 7.0: Independent nascent and new business owner-manager, 8.0: Independent nascent and established business owner-manager, 9.0: Other combinations of business owner-manager but not intrapreneur, 10.0: Active leading intrapreneur now only, 11.0: Active leading intrapreneur now and nascent, and/or new and/or established business owner-manager
+*   **entractea**: 0.0: No activity, 1.0: Independent early-stage entrepreneur only, 2.0: Sponsored early-stage entrepreneur only, 3.0: Independent established business owner-manager only, 4.0: Sponsored established business owner-manager only, 5.0: Independent early-stage and independent established business owner-manager, 6.0: Independent early-stage and sponsored established business owner-manager, 7.0: Other combinations of early-stage and established business owners (includes some sponsorship), 8.0: Active leading intrapreneur now only, 9.0: Active leading intrapreneur now and independent early-stage entrepreneur only, 10.0: Active leading intrapreneur now and sponsored early-stage entrepreneur only, 11.0: Active leading intrapreneur now and other business owner combination
+*   **entractea2**: 0.0: No activity, 1.0: Independent early-stage entrepreneur only, 2.0: Sponsored early-stage entrepreneur only, 3.0: Independent established business owner-manager only, 4.0: Sponsored established business owner-manager only, 5.0: Independent early-stage and independent established business owner-manager, 6.0: Independent early-stage and sponsored established business owner-manager, 7.0: Other combinations of early-stage and established business owners (includes some sponsorship), 8.0: Active leading intrapreneur now only, 9.0: Active leading intrapreneur now, also sponsored but not independent business owner, 10.0: Active leading intrapreneur now and other business owner combination
+*   **entractea3**: 0.0: No activity, 1.0: Independent early-stage entrepreneur only, 2.0: Sponsored early-stage entrepreneur only, 3.0: Independent established business owner-manager only, 4.0: Sponsored established business owner-manager only, 5.0: Other combinations of early-stage and established business owners, 6.0: Active leading intrapreneur now only, 7.0: Active leading intrapreneur now and other business owner combination
+
+## Page 20
+
+*   **teaactivityr**: 1.0: no early stage ent activity, 2.0: no jobs in 5 years, 3.0: 1-4 jobs in 5 years, 4.0: 5-9 jobs in 5 years, 5.0: 10+jobs in 5 years
+*   **cpknstart1**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **cpknstart2**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **cpknstop1**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **cpknstop2**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **su\_crstart**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_crstart**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_crstart**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teacrstart**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_crgrow**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_crgrow**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_crgrow**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teacrgrow**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_cpdelay**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_cpnewopp**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **bb\_cpnewopp**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_cpnewopp**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teacpnewopp**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **su\_cpgovres**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+
+## Page 21
+
+*   **bb\_cpgovres**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eb\_cpgovres**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **teacpgovres**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **futsup\_cp\_sm**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **futsup\_cp\_hi**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+*   **eea\_stop**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eea\_newopp**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eea\_govres**: -2.0: Refused, -1.0: Don't know, 1.0: Strongly disagree, 2.0: Somewhat disagree, 3.0: Neither agree nor disagree, 4.0: Somewhat agree, 5.0: Strongly agree
+*   **eea\_support**: -2.0: Refused, -1.0: Don't know, 0.0: No, 1.0: Yes
+
+## Page 22
+
+*   **eb\_cpnewopp**: Owner-manager estb firm: coronavirus pandemic provided new opportunities that you want to pursue with this business?
+*   **teacpnewopp**: Early-stage entrepreneur: coronavirus pandemic provided new opportunities that you want to pursue with this business?
+*   **su\_cpgovres**: Startup (nascent) entrepreneur: has government so far effectively responded to the economic consequences of the coronavirus pandemic?
+*   **bb\_cpgovres**: Owner-manager new firm: has government so far effectively responded to the economic consequences of the coronavirus pandemic?
+*   **eb\_cpgovres**: Owner-manager estb firm: has government so far effectively responded to the economic consequences of the coronavirus pandemic?
+*   **teacpgovres**: Early-stage entrepreneur: has government so far effectively responded to the economic consequences of the coronavirus pandemic?
+*   **futsup\_cp\_sm**: Entrepreneurial itentions influenced by coronavirus pandemic to at least some extent
+*   **futsup\_cp\_hi**: Entrepreneurial itentions influenced by coronavirus pandemic to high extent
+*   **eea\_stop**: EEA: has the coronavirus pandemic caused the business you work for to stop some of its core activities?
+*   **eea\_newopp**: EEA: has coronavirus pandemic led to new business opportunities that are currently being pursued in the business you work for?
+*   **eea\_govres**: EEA: has government so far effectively responded to the economic consequences of the coronavirus pandemic?
+*   **eea\_support**: EEA: company received, or expected to receive, financial support from the government as a result of the coronavirus pandemic
