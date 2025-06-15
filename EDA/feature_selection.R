@@ -282,5 +282,3 @@ model_data <- model_data %>%
     across(all_of(numeric_cols), as.numeric),
     across(all_of(all_factor_cols), as.factor)
   )
-
-glimpse(model_data)
