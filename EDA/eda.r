@@ -196,6 +196,28 @@ plot_intention_by_cat(
 # -> Consideration: Drop ctryalp in favor of only WBINC
 
 source("eda/world_heatmap.R")
+# --- 5e. Create the World Map Plot ---
+ggplot(data = world_map_with_data) +
+  geom_sf(aes(fill = proportion_yes)) +
+  scale_fill_viridis_c(
+    option = "plasma",
+    labels = scales::percent,
+    na.value = "grey80",
+    name = "Intention to Start\n(Proportion 'Yes')"
+  ) +
+  labs(
+    title = "Global Distribution of Entrepreneurial Intention (Weighted)",
+    subtitle = "Estimated proportion of the 18-64 population intending to start a business in the next 3 years.",
+    caption = "Source: GEM 2021 APS. Weights (WEIGHT_L) applied to make samples nationally representative."
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 12),
+    plot.caption = element_text(hjust = 0.5, size = 9),
+    legend.position = "bottom",
+    legend.key.width = unit(2, "cm")
+  )
 
 # --- Change in Household Income due to Corona Virus vs. Intention ---
 plot_intention_by_cat(

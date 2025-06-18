@@ -7,30 +7,31 @@ source("EDA\\feature_selection.R")
 
 library(dplyr)
 library(scales)
+library(forcats)
 
+# ===================================================================
 # --- Stage 1: Descriptive Analysis - counting missing values ---
+# ===================================================================
 cat("\n--- Descriptive Analysis of Missing Values ---\n")
 missing_data <- sapply(model_data, function(x) c(
   absolute = sum(is.na(x)),
   relative = round(sum(is.na(x)) / length(x) * 100, 1)
 ))
-
-# Convert to a data frame for easier manipulation and sorting
 missing_df <- as.data.frame(t(missing_data))
-# Ensure 'absolute' column is an integer type
 missing_df$absolute <- as.integer(missing_df$absolute)
-# Sort by 'absolute' column in descending order
 missing_df_sorted <- missing_df[order(-missing_df$absolute), ]
 print(missing_df_sorted)
 
+# --- Analysis ---
 # There are many columns with a high rate of missing values
 # Requires careful treatment, because removing results in very high data loss
 # Simple Imputation Techniques like Median might be too simple
 # and cover up potential information
 
 
-
+# ===================================================================
 # --- Stage 2: Hierarchical Clustering ---
+# ===================================================================
 # Methodology from official GEM Website:
 # "To save interview times and costs, the sets of questions related to attitudes
 # and perceptions (four questions each) have been randomly assigned over
@@ -42,7 +43,6 @@ print(missing_df_sorted)
 
 # Some columns have a high number of Missing Values (see Stage 1 output)
 # These are likely clustered into groups (answers to questions that are "back to back" in the Questionaire):
-
 
 
 # Generate a Dendogram (Hierarchical Cluster of the missing Values)
@@ -61,6 +61,7 @@ cols_with_missing <-
 missing_matrix_filtered <- missing_matrix[, cols_with_missing]
 
 col_dist <- dist(t(missing_matrix), method = "euclidean")
+set.seed(42)
 hclust_result <- hclust(col_dist, method = "ward.D2")
 par(mar = c(5, 1, 4, 8)) # Bottom, Left, Top, Right
 
@@ -96,8 +97,9 @@ attitudes_perceptions_cols <- c("CULSUPyy", "EQUALIyy", "NBGOODyy", "NBSTATyy", 
 # Hence, it has the highest absolute missing count of them all (see missing_df_sorted)
 
 
-
+# ===================================================================
 # --- Stage 3: Analyze Missingness Blocks ---
+# ===================================================================
 # Objective: Determine size of overlap between missing values in the clusters
 
 # Let's numerically check this
@@ -157,120 +159,146 @@ print(attitudes_summary)
 # -> Remove these columns.
 
 model_data <- model_data %>% select(-any_of(attitudes_perceptions_cols))
-cat("Attidues/ Perceptions Columns removed. Remaining columns:", ncol(model_data), "\n")
-
-# --- Stage 4: Handle Missing Values for the 'Mindset' Cluster ---
-# Methodology:
-# 1. Create a binary flag 'Mindset_Asked' to permanently label rows based
-#    on the reason for missingness (split-sample vs. partial non-response).
-#    This captures the survey's design.
-# 2. Impute the remaining NA values in the mindset columns. We will turn the
-#    NAs into an explicit factor level '0' using the modern forcats function.
-
-cat("\n--- Stage 4: Creating 'Mindset_Asked' flag and imputing values ---\n")
-
-# Ensure the forcats library is loaded
-if (!require(forcats)) install.packages("forcats")
-library(forcats)
-
-# The columns we are targeting
-mindset_cols <- c("OPPISMyy", "PROACTyy", "CREATIVyy", "VISIONyy")
-
-model_data <- model_data %>%
-  mutate(
-    # Step 1: Create the 'Mindset_Asked' flag BEFORE imputation
-    Mindset_Asked = case_when(
-      rowSums(is.na(select(., all_of(mindset_cols)))) == length(mindset_cols) ~ "Not_Asked",
-      TRUE ~ "Asked"
-    ),
-    Mindset_Asked = as.factor(Mindset_Asked),
-
-    # Step 2: Impute the NA values
-    across(
-      all_of(mindset_cols),
-      ~ fct_na_value_to_level(., level = "Not_Answered")
-    )
-  )
-
-cat("Flag created and values for Mindset Cluster imputed \n")
+cat(
+  "Attitudes/Perceptions Columns removed due to high partial non-response. Remaining columns:",
+  ncol(model_data), "\n"
+)
 
 
-# FRFAILOP (= "Fear of failure (in 18-64 sample perceiving good opportunities to start a business)")
-# Information captured by:
-# FRFAILYY,  ("Fear of Failure"), age & OPPORTyy ("....perceiving good opportunities to start a business")
-
-# column is missing in 61.8% of cases and does not contain a lot of new information
-# -> drop the column
+# --- Analysis of FRFAILOP ---
+# FRFAILOP = "Fear of failure (in 18-64 sample perceiving good opportunities)"
+# This column is missing in 61.8% of cases due to its dependency on other
+# answers. Its information is largely captured by other variables (FRFAILyy,
+# OPPORTyy, age).
+# -> Decision: Drop the column to avoid dealing with complex structural missingness.
 model_data <- model_data %>% select(-FRFAILOP)
-
-cat("FRFAILOP column removed due to structural missingness. Remaining columns:", ncol(model_data), "\n")
-
-
-# --- 1. Handle High/Moderate Missingness Categorical Columns (>5%) ---
-# For these, we create a new factor level to treat "missing" as information.
-# This applies to: INDSUPyy, EASYSTyy, GEMHHINC, OPPORTyy, SUSKILyy
-high_missing_categorical <- c(
-  "INDSUPyy", "EASYSTyy", "GEMHHINC", "OPPORTyy", "SUSKILyy"
+cat(
+  "FRFAILOP column removed due to structural missingness. Remaining columns:",
+  ncol(model_data), "\n"
 )
 
+
+# ===================================================================
+# --- Stage 4: Feature Engineering from Missingness Patterns ---
+# ===================================================================
+# Instead of simple imputation, we create new features to capture the
+# information contained within the *pattern* of missingness itself.
+
+cat("\n--- Stage 4: Engineering features from missingness patterns ---\n")
+
 model_data <- model_data %>%
   mutate(
-    across(
-      all_of(high_missing_categorical),
-      ~ fct_na_value_to_level(., level = "Unknown")
-    )
-  )
-
-cat("Handled high-missingness categorical columns by creating 'Unknown' level.\n")
-
-
-# --- 2. Handle High/Moderate Missingness Numeric Column: 'age' (5.9%) ---
-# We create a binary flag and then impute with the median.
-model_data <- model_data %>%
-  mutate(
-    age_is_missing = as.factor(ifelse(is.na(age), "Yes", "No")),
-    age = ifelse(is.na(age), median(age, na.rm = TRUE), age)
-  )
-
-cat("Handled 'age' by creating 'age_is_missing' flag and imputing median.\n")
-
-
-# --- 3. Handle Low Missingness Columns (<5%) ---
-# For these, simple median/mode imputation is safe and effective.
-
-# Define the columns
-low_missing_numeric <- c("hhsize")
-low_missing_categorical <- c(
-  "KNOWENyy", "cphhinc", "GEMEDUC", "GEMOCCU", "gender"
-)
-
-# Helper function to find the mode (most frequent value)
-get_mode <- function(x) {
-  ux <- unique(x[!is.na(x)])
-  ux[which.max(tabulate(match(x, ux)))]
-}
-
-# Impute numeric with median, categorical with mode
-model_data <- model_data %>%
-  mutate(
-    across(
-      all_of(low_missing_numeric),
-      ~ ifelse(is.na(.), median(., na.rm = TRUE), .)
+    # Methodology: Create a binary flag 'Mindset_Asked' to permanently label
+    # rows based on the reason for missingness (split-sample design vs.
+    # partial non-response). This captures the survey's design as a feature.
+    Mindset_Asked = as.factor(
+      ifelse(
+        rowSums(is.na(select(., all_of(mindset_cols)))) == length(mindset_cols),
+        "Not_Asked",
+        "Asked"
+      )
     ),
-    across(
-      all_of(low_missing_categorical),
-      ~ ifelse(is.na(.), get_mode(.), as.character(.))
-    )
-  ) %>%
-  # The previous step converts factors to characters, so we convert them back
-  mutate(across(all_of(low_missing_categorical), as.factor))
+
+    # Methodology: Since 'age' has a High/ Moderate Missingness (5.9%),
+    # we create a binary flag to capture the act of
+    # not providing an age, which could be a predictive behavior in itself.
+    # We then impute the numeric value in the next stage.
+    age_is_missing = as.factor(ifelse(is.na(age), "Yes", "No"))
+  )
+
+cat("Created 'Mindset_Asked' and 'age_is_missing' flags.\n")
 
 
-cat("Handled low-missingness columns with median/mode imputation.\n")
+# ===================================================================
+# --- Stage 5: Advanced Imputation with MissForest ---
+# ===================================================================
+
+# --- Rationale for Advanced Imputation ---
+#
+# 1. Why not simple imputation (median/mode)?
+# Our initial analysis showed that even columns with <5% missingness still
+# had thousands of missing values. Imputing these with a single value
+# (like the median or mode) would artificially reduce the variance of the
+# data and ignore the rich relationships between variables. For example,
+# an imputed 'age' should likely be different for a student vs. a retiree.
+# A multivariate approach is needed for more realistic imputations.
+#
+# 2. Why MissForest over MICE?
+# Both MICE and MissForest are excellent multivariate imputation methods.
+# However, MICE is parametric; it typically uses regression models (linear,
+# logistic) to predict missing values. This assumes that the relationships
+# between variables are well-described by these simple models.
+# Our data consists of complex socio-demographic and perceptual variables
+# where relationships are likely non-linear and interactive.
+# MissForest is non-parametric. It uses a Random Forest, which excels at
+# automatically capturing these complex interactions without making any
+# assumptions about the underlying data distribution. For this reason, it is
+# often more accurate for datasets like ours.
+#
+# 3. Why Single Imputation (MissForest) and not Multiple Imputation?
+# Multiple Imputation (MI) is the theoretical gold standard for statistical
+# inference because it correctly accounts for the uncertainty of the
+# imputation process. However, it produces 'm' (e.g., 5-10) separate
+# complete datasets. For our goal of predictive modeling, this would mean
+# training, tuning, and evaluating 'm' different classification models,
+# which creates a massive workflow overhead. Since our primary goal is
+# predictive accuracy, not the precise estimation of coefficient p-values,
+# the high-quality single dataset produced by MissForest is the optimal
+# choice, balancing imputation accuracy with practical feasibility.
+#
+
+cat("\n--- Stage 5: Advanced Imputation using MissForest ---\n")
+
+library(missForest)
+library(doParallel)
+
+# --- Setup Parallel Processing ---
+# Best Practice: Use one less than the total number of available cores.
+# This keeps the computer responsive by leaving a core for the OS and
+# other background tasks.
+cores_to_use <- parallel::detectCores() - 1
+registerDoParallel(cores = cores_to_use)
+cat("Parallel backend registered with", cores_to_use, "cores.\n")
+
+# for reproduceablity
+set.seed(42)
+
+# --- Run MissForest ---
+# The algorithm will iteratively use Random Forest to predict and fill the
+# missing values in the dataset until the imputed values converge.
+# This can take a few minutes, even with parallel processing.
+cat("Starting MissForest imputation... This may take a few minutes.\n")
+
+# Note: missForest works on a matrix/dataframe. It will automatically
+# identify which columns have NAs and impute them.
+missForest_result <- missForest(
+  model_data,
+  parallelize = "variables",
+  ntree = 50,
+  maxiter = 6,
+  verbose = TRUE
+)
+
+cat("MissForest imputation complete.\n")
+
+# The imputed dataset is in the $ximp element of the result
+model_data <- missForest_result$ximp
+
+# The OOBerror gives an estimate of imputation error.
+# For categorical variables (NRMSE is not applicable), it shows the
+# Proportion of Falsely Classified (PFC) entries. Lower is better.
+cat("Imputation Out-of-Bag (OOB) Error (PFC for categorical):\n")
+print(missForest_result$OOBerror)
+
+
+# --- Cleanup Parallel Processing ---
+# It's good practice to stop the cluster to release the cores.
+stopImplicitCluster()
+cat("Parallel backend stopped.\n")
 
 
 # --- Final Verification ---
-# Check if any missing values remain in the entire dataset.
+# Double-check that no missing values remain in the entire dataset.
 cat("\n--- Final Verification: Checking for any remaining NAs ---\n")
 remaining_nas <- colSums(is.na(model_data))
 if (all(remaining_nas == 0)) {
@@ -279,3 +307,26 @@ if (all(remaining_nas == 0)) {
   cat("Warning: Some missing values still exist. Please review:\n")
   print(remaining_nas[remaining_nas > 0])
 }
+
+
+# ===================================================================
+# --- Stage 6: Save Cleaned Data to Disk ---
+# ===================================================================
+# To avoid re-running this entire time-consuming cleaning and imputation
+# process every time, we save the final, clean dataframe to a file.
+# We use saveRDS() because it perfectly preserves all R data types,
+# including factor levels, which is critical for our modeling scripts.
+
+cat("\n--- Stage 6: Saving cleaned data to disk ---\n")
+
+# Define the path for the cleaned data file
+# It's good practice to have a 'cleaned' subfolder in your data directory
+model_data_path <- "EDA/output/cleaned_model_data.rds"
+
+# Create the directory if it doesn't exist to prevent errors
+dir.create(dirname(model_data_path), showWarnings = FALSE, recursive = TRUE)
+
+# Save the single 'model_data' object
+saveRDS(model_data, file = model_data_path)
+
+cat("Cleaned data successfully saved to:", model_data_path, "\n")

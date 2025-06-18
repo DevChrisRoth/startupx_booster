@@ -3,7 +3,7 @@ library(tidyverse)
 library(patchwork)
 
 setwd("C:\\Users\\timor\\Desktop\\Hochschule\\Machine_Learning")
-source("EDA\\missing_values.R")
+model_data <- readRDS("EDA/output/cleaned_model_data.rds")
 
 # --- Helper function for 5-point Likert scales ---
 # This avoids repeating the same code for multiple variables.
