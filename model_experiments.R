@@ -1,5 +1,5 @@
 # ===================================================================
-# --- Main Modeling Script: Experiment_LogReg_LASSO_SMOTE ---
+# --- Main Modeling Script: Experiment_LogReg_Splines ---
 # ===================================================================
 
 # --- 1. SETUP ---
@@ -7,7 +7,7 @@
 library(tidymodels)
 library(dplyr)
 library(doParallel)
-library(themis) # For step_smote
+library(themis) 
 library(glmnet)
 
 # Load our custom functions for evaluation and plotting
@@ -16,15 +16,14 @@ source("./helper_functions.R")
 # Load the data (assuming it's created by your EDA script)
 source("EDA/eda_students.R")
 
-# --- Remove features not available in a real-world deployment ---
-# Keeping age_is_missing as it is a valid behavioral feature
+# Remove features not available in a real-world deployment
 student_data <- student_data %>%
   select(-any_of(c("ctryalp", "Mindset_Asked")))
 
 set.seed(42)
 
 # --- Set the experiment name ---
-experiment_name <- "Experiment_LogReg_LASSO_SMOTE"
+experiment_name <- "Experiment_LogReg_Splines"
 output_base_dir <- "output"
 
 # Create full path for this experiment's output
@@ -54,12 +53,13 @@ cv_folds <- vfold_cv(train_data, v = 5, strata = FUTSUPNO)
 
 
 # --- 3. FEATURE ENGINEERING RECIPE ---
-# Use SMOTE to handle class imbalance by over-sampling
+# Add step_ns() to create natural spline features for 'age'
 my_recipe <-
   recipe(FUTSUPNO ~ ., data = train_data) %>%
   step_dummy(all_nominal_predictors()) %>%
   step_zv(all_predictors()) %>%
-  themis::step_smote(FUTSUPNO) # Using SMOTE with default over_ratio = 1
+  themis::step_smote(FUTSUPNO) %>%
+  recipes::step_ns(age, deg_free = tune()) # <<< THIS IS THE CHANGE
 
 
 # --- 4. MODEL SPECIFICATION & WORKFLOW ---
@@ -78,17 +78,20 @@ lasso_workflow <- workflow() %>%
 registerDoParallel(cores = detectCores(logical = FALSE))
 metric_set_sens_spec <- metric_set(sens, yardstick::spec, roc_auc)
 
-# Create a tuning grid for the penalty parameter.
+# Create a tuning grid for both penalty (from LASSO) and deg_free (from the spline)
 set.seed(42)
-penalty_grid <- grid_regular(penalty(), levels = 20)
-
+spline_grid <- grid_regular(
+  penalty(),
+  deg_free(range = c(2L, 5L)), # Tune the curve's flexibility
+  levels = 5
+)
 
 # Tune the model
 set.seed(42)
 lasso_tune_results <- tune_grid(
   lasso_workflow,
   resamples = cv_folds,
-  grid = penalty_grid,
+  grid = spline_grid,
   metrics = metric_set_sens_spec,
   control = control_grid(save_pred = TRUE)
 )

@@ -1,0 +1,33 @@
+===============================================================
+                 EXPERIMENT REPORT: Experiment_LogReg_Splines
+===============================================================
+Report generated on: 2025-06-20 17:56:14.091535
+
+--- CONFIGURATION ---
+Model Type: logistic_reg
+Recipe Steps Included: c("double", "numeric"), c("factor", "unordered", "nominal")
+
+--- HYPERPARAMETER TUNING (on Training Set CV) ---
+Tuning Metric: roc_auc
+Best Hyperparameters Found: penalty = 0.0032, deg_free = 2
+
+--- VALIDATION SET PERFORMANCE ---
+Optimal Decision Threshold Applied: 0.5248
+
+** Core Metrics (Threshold Independent) **
+      Metric Estimate
+    accuracy   0.6847
+     roc_auc   0.7656
+ brier_class   0.2049
+
+** Performance at Optimal Threshold (with use-case descriptions) **
+Accuracy   : 0.7060  (Overall, what proportion of students did we classify correctly?)
+Sensitivity: 0.7067  (How many of the true founders did we find?)
+Specificity: 0.7059  (How well did we avoid contacting non-founders?)
+Precision  : 0.3657  (When we predict 'founder', how often are we right?)
+
+** Confusion Matrix (Validation Set) **
+          Truth
+Prediction  No Yes
+       No  612  61
+       Yes 255 147
