@@ -12,7 +12,7 @@
 library(tidymodels)
 library(dplyr)
 library(doParallel)
-# install.packages("xgboost") # Make sure xgboost is installed
+library(themis) # Make sure themis is loaded for step_smote
 library(xgboost)
 
 # Load our custom functions for evaluation and plotting
@@ -26,10 +26,8 @@ source("EDA/eda_students.R")
 student_data <- student_data %>%
   select(-any_of(c("ctryalp", "Mindset_Asked")))
 
-set.seed(42)
-
 # --- Set the experiment name to keep results organized ---
-experiment_name <- "Experiment_XGBoost_ManualWeighting"
+experiment_name <- "Experiment_XGBoost_SMOTE"
 output_base_dir <- "output" # Base folder for all experiments
 
 # Create full path for this experiment's output
@@ -48,7 +46,7 @@ if (!dir.exists(experiment_output_dir)) {
 
 # First, split off the final, held-out test set (e.g., 20%)
 data_split <- initial_split(student_data, prop = 0.80, strata = FUTSUPNO)
-test_data  <- testing(data_split)      # This is locked away until the very end
+test_data <- testing(data_split) # This is locked away until the very end
 train_val_data <- training(data_split)
 
 # Now, split the remaining data into training and validation sets (e.g., 80/20 split of the 80%)
@@ -56,8 +54,10 @@ val_split <- initial_split(train_val_data, prop = 0.80, strata = FUTSUPNO)
 train_data <- training(val_split)
 validation_data <- testing(val_split)
 
-cat(sprintf("Data Split Summary:\n - Training Set: %d rows\n - Validation Set: %d rows\n - Test Set: %d rows\n",
-            nrow(train_data), nrow(validation_data), nrow(test_data)))
+cat(sprintf(
+  "Data Split Summary:\n - Training Set: %d rows\n - Validation Set: %d rows\n - Test Set: %d rows\n",
+  nrow(train_data), nrow(validation_data), nrow(test_data)
+))
 
 
 # Create cross-validation folds from the TRAINING data for tuning
@@ -65,23 +65,25 @@ cv_folds <- vfold_cv(train_data, v = 5, strata = FUTSUPNO)
 
 
 # --- 3. FEATURE ENGINEERING RECIPE ---
-# The recipe is simple, as we are not using sampling methods.
+# Add step_smote to handle the class imbalance.
 my_recipe <-
   recipe(FUTSUPNO ~ ., data = train_data) %>%
   step_dummy(all_nominal_predictors()) %>%
-  step_zv(all_predictors())
+  step_zv(all_predictors()) %>%
+  themis::step_smote(FUTSUPNO, over_ratio = tune())
 
 
 # --- 4. MODEL SPECIFICATION & WORKFLOW ---
 # Define the XGBoost model specification.
+# Remove the scale_pos_weight argument from the engine.
 xgb_spec <-
   boost_tree(
-    trees = 500, # Fix the number of trees to a reasonable value
+    trees = 500,
     tree_depth = tune(),
     learn_rate = tune(),
-    min_n = tune(),
+    min_n = tune()
   ) %>%
-  set_engine("xgboost", scale_pos_weight = 4.0) %>%
+  set_engine("xgboost") %>%
   set_mode("classification")
 
 # Combine the recipe and model into a single workflow object
@@ -97,14 +99,14 @@ registerDoParallel(cores = detectCores(logical = FALSE))
 # Define the metrics we care about
 metric_set_sens_spec <- metric_set(sens, yardstick::spec, roc_auc)
 
-# Create a tuning grid for the XGBoost parameters.
-# Using a Latin Hypercube grid for more random coverage of the space.
+# Create a tuning grid for the XGBoost parameters plus over_ratio.
 set.seed(42)
 xgb_grid <- grid_space_filling(
   tree_depth(),
   learn_rate(),
   min_n(),
-  size = 15 # Number of combinations to try
+  over_ratio(),
+  size = 20 # Increased size slightly to explore the 4D space
 )
 
 

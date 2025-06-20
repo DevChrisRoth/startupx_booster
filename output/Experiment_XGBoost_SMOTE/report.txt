@@ -1,0 +1,33 @@
+===============================================================
+                 EXPERIMENT REPORT: Experiment_XGBoost_SMOTE
+===============================================================
+Report generated on: 2025-06-20 17:26:14.650432
+
+--- CONFIGURATION ---
+Model Type: boost_tree
+Recipe Steps Included: c("double", "numeric"), c("factor", "unordered", "nominal")
+
+--- HYPERPARAMETER TUNING (on Training Set CV) ---
+Tuning Metric: roc_auc
+Best Hyperparameters Found: min_n = 8, tree_depth = 6, learn_rate = 0.0336, over_ratio = 0.9263
+
+--- VALIDATION SET PERFORMANCE ---
+Optimal Decision Threshold Applied: 0.1818
+
+** Core Metrics (Threshold Independent) **
+      Metric Estimate
+    accuracy   0.8223
+     roc_auc   0.7827
+ brier_class   0.1319
+
+** Performance at Optimal Threshold (with use-case descriptions) **
+Accuracy   : 0.7023  (Overall, what proportion of students did we classify correctly?)
+Sensitivity: 0.7019  (How many of the true founders did we find?)
+Specificity: 0.7024  (How well did we avoid contacting non-founders?)
+Precision  : 0.3614  (When we predict 'founder', how often are we right?)
+
+** Confusion Matrix (Validation Set) **
+          Truth
+Prediction  No Yes
+       No  609  62
+       Yes 258 146
