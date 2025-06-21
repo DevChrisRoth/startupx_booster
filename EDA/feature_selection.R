@@ -20,7 +20,6 @@ library(data.table)
 library(caret)
 
 setwd("C:\\Users\\timor\\Desktop\\Hochschule\\Machine_Learning")
-gem_data <- fread("data/GEM2021APSGlobalIndividualLevelData_15Feb2023.csv")
 
 # --- Stage 0: DATA LOADING & CONVERSION ---
 # Define file paths

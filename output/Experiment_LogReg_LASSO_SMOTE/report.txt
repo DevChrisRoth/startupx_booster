@@ -1,7 +1,7 @@
 ===============================================================
                  EXPERIMENT REPORT: Experiment_LogReg_LASSO_SMOTE
 ===============================================================
-Report generated on: 2025-06-20 17:47:54.705969
+Report generated on: 2025-06-21 17:23:03.255028
 
 --- CONFIGURATION ---
 Model Type: logistic_reg
@@ -9,25 +9,25 @@ Recipe Steps Included: c("double", "numeric"), c("factor", "unordered", "nominal
 
 --- HYPERPARAMETER TUNING (on Training Set CV) ---
 Tuning Metric: roc_auc
-Best Hyperparameters Found: penalty = 0.0078
+Best Hyperparameters Found: penalty = 0.0029, over_ratio = 1.0762
 
 --- VALIDATION SET PERFORMANCE ---
-Optimal Decision Threshold Applied: 0.5276
+Optimal Decision Threshold Applied: 0.5142
 
 ** Core Metrics (Threshold Independent) **
       Metric Estimate
-    accuracy   0.6800
-     roc_auc   0.7658
- brier_class   0.2062
+    accuracy   0.6828
+     roc_auc   0.7583
+ brier_class   0.2003
 
 ** Performance at Optimal Threshold (with use-case descriptions) **
-Accuracy   : 0.7023  (Overall, what proportion of students did we classify correctly?)
-Sensitivity: 0.7019  (How many of the true founders did we find?)
-Specificity: 0.7024  (How well did we avoid contacting non-founders?)
-Precision  : 0.3614  (When we predict 'founder', how often are we right?)
+Accuracy   : 0.6921  (Overall, what proportion of students did we classify correctly?)
+Sensitivity: 0.6923  (How many of the true founders did we find?)
+Specificity: 0.6920  (How well did we avoid contacting non-founders?)
+Precision  : 0.3504  (When we predict 'founder', how often are we right?)
 
 ** Confusion Matrix (Validation Set) **
           Truth
 Prediction  No Yes
-       No  609  62
-       Yes 258 146
+       No  600  64
+       Yes 267 144
