@@ -1,0 +1,33 @@
+===============================================================
+                 EXPERIMENT REPORT: Experiment_RF_SMOTE
+===============================================================
+Report generated on: 2025-06-22 04:46:37.92286
+
+--- CONFIGURATION ---
+Model Type: rand_forest
+Recipe Steps Included: c("double", "numeric"), c("factor", "unordered", "nominal")
+
+--- HYPERPARAMETER TUNING (on Training Set CV) ---
+Tuning Metric: roc_auc
+Best Hyperparameters Found: mtry = 5, min_n = 16, over_ratio = 0.8857
+
+--- VALIDATION SET PERFORMANCE ---
+Optimal Decision Threshold Applied: 0.2613
+
+** Core Metrics (Threshold Independent) **
+      Metric Estimate
+    accuracy   0.8228
+     roc_auc   0.7655
+ brier_class   0.1345
+
+** Performance at Optimal Threshold (with use-case descriptions) **
+Accuracy   : 0.6920  (Overall, what proportion of students did we classify correctly?)
+Sensitivity: 0.6923  (How many of the true founders did we find?)
+Specificity: 0.6920  (How well did we avoid contacting non-founders?)
+Precision  : 0.3495  (When we predict 'founder', how often are we right?)
+
+** Confusion Matrix (Validation Set) **
+          Truth
+Prediction  No Yes
+       No  602  64
+       Yes 268 144

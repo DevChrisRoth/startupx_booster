@@ -1,0 +1,33 @@
+===============================================================
+                 EXPERIMENT REPORT: Experiment_RF_ManualWeights
+===============================================================
+Report generated on: 2025-06-22 04:47:36.329496
+
+--- CONFIGURATION ---
+Model Type: rand_forest
+Recipe Steps Included: c("double", "numeric"), c("factor", "unordered", "nominal")
+
+--- HYPERPARAMETER TUNING (on Training Set CV) ---
+Tuning Metric: roc_auc
+Best Hyperparameters Found: mtry = 3, min_n = 5
+
+--- VALIDATION SET PERFORMANCE ---
+Optimal Decision Threshold Applied: 0.1959
+
+** Core Metrics (Threshold Independent) **
+      Metric Estimate
+    accuracy   0.8173
+     roc_auc   0.7691
+ brier_class   0.1317
+
+** Performance at Optimal Threshold (with use-case descriptions) **
+Accuracy   : 0.7115  (Overall, what proportion of students did we classify correctly?)
+Sensitivity: 0.7115  (How many of the true founders did we find?)
+Specificity: 0.7115  (How well did we avoid contacting non-founders?)
+Precision  : 0.3709  (When we predict 'founder', how often are we right?)
+
+** Confusion Matrix (Validation Set) **
+          Truth
+Prediction  No Yes
+       No  619  60
+       Yes 251 148

@@ -2055,77 +2055,82 @@ cat(sprintf("Calculated class weights for Random Forest: No=%.2f, Yes=%.2f\n",
 # --- Create the comprehensive list of all experiment configurations ---
 experiment_configs <- list(
   
-  # --- 1. LOGISTIC REGRESSION: LASSO with Tunable SMOTE ---
-  list(
-    name = "Experiment_LogReg_LASSO_SMOTE",
-    model_spec = logistic_reg(penalty = tune(), mixture = 1) %>% 
-      set_engine("glmnet") %>% 
-      set_mode("classification"),
+list(
+    name = "Experiment_1_LogReg_Baseline",
+    model_spec = logistic_reg(penalty = tune(), mixture = 1) %>%
+      set_engine("glmnet") %>% set_mode("classification"),
     recipe_func = function(data) {
       recipe(FUTSUPNO ~ ., data = data) %>%
         step_dummy(all_nominal_predictors()) %>%
-        step_zv(all_predictors()) %>%
-        step_smote(FUTSUPNO, over_ratio = tune()) # <<< Tunable over_ratio
+        step_zv(all_predictors())
     },
-    grid_func = function() {
-      grid_space_filling(penalty(), over_ratio(), size = 20)
-    }
-  ),
-  
-  # --- 2. LOGISTIC REGRESSION: Splines for 'age' ---
-  list(
-    name = "Experiment_LogReg_Splines",
-    model_spec = logistic_reg(penalty = tune(), mixture = 1) %>% 
-      set_engine("glmnet") %>% 
-      set_mode("classification"),
-    recipe_func = function(data) {
-      recipe(FUTSUPNO ~ ., data = data) %>%
-        step_dummy(all_nominal_predictors()) %>%
-        step_zv(all_predictors()) %>%
-        step_smote(FUTSUPNO) %>%
-        step_ns(age, deg_free = tune()) # <<< Note the added spline step
-    },
-    grid_func = function() { 
-      grid_regular(penalty(), deg_free(range = c(2L, 5L)), levels = 5) 
-    }
+    # Define the parameter space for Bayesian search
+    param_grid = parameters(penalty())
   ),
 
-  # --- 3. RANDOM FOREST: Baseline (for comparison) ---
   list(
-    name = "Experiment_RF_Baseline",
-    model_spec = rand_forest(mtry = tune(), min_n = tune()) %>% 
-      set_engine("ranger", importance = "permutation") %>% 
+    name = "Experiment_2_LogReg_SMOTE",
+    model_spec = logistic_reg(penalty = tune(), mixture = 1) %>%
+      set_engine("glmnet") %>% set_mode("classification"),
+    recipe_func = function(data) {
+      recipe(FUTSUPNO ~ ., data = data) %>%
+        step_dummy(all_nominal_predictors()) %>%
+        step_zv(all_predictors()) %>%
+        # Use a fixed, strong over_ratio to isolate the effect of SMOTE
+        step_smote(FUTSUPNO, over_ratio = 0.8)
+    },
+    param_grid = parameters(penalty())
+  ),
+
+  list(
+    name = "Experiment_3_LogReg_Splines",
+    model_spec = logistic_reg(penalty = tune(), mixture = 1) %>%
+      set_engine("glmnet") %>% set_mode("classification"),
+    recipe_func = function(data) {
+      recipe(FUTSUPNO ~ ., data = data) %>%
+        step_dummy(all_nominal_predictors()) %>%
+        step_zv(all_predictors()) %>%
+        # Add splines for age to allow for non-linear effects
+        step_ns(age, deg_free = tune()) %>%
+        # Also add SMOTE to make it comparable to the best RF/XGBoost models
+        step_smote(FUTSUPNO, over_ratio = 0.8)
+    },
+    param_grid = parameters(penalty(), deg_free(range = c(2L, 5L)))
+  ),
+
+  # ===================================================================
+  # --- 2. RANDOM FOREST FAMILY ---
+  # ===================================================================
+
+  list(
+    name = "Experiment_4_RF_Baseline",
+    model_spec = rand_forest(mtry = tune(), min_n = tune()) %>%
+      set_engine("ranger", importance = "permutation") %>%
       set_mode("classification"),
     recipe_func = function(data) {
       recipe(FUTSUPNO ~ ., data = data) %>%
         step_dummy(all_nominal_predictors()) %>%
         step_zv(all_predictors())
     },
-    grid_func = function() { 
-      grid_space_filling(mtry(range = c(2, 25)), min_n(range = c(2, 20)), size = 15) 
-    }
+    param_grid = parameters(mtry(range = c(2, 25)), min_n(range = c(2, 20)))
   ),
-  
-  # --- 4. RANDOM FOREST: With SMOTE ---
+
   list(
-    name = "Experiment_RF_SMOTE",
-    model_spec = rand_forest(mtry = tune(), min_n = tune()) %>% 
-      set_engine("ranger", importance = "permutation") %>% 
+    name = "Experiment_5_RF_SMOTE",
+    model_spec = rand_forest(mtry = tune(), min_n = tune()) %>%
+      set_engine("ranger", importance = "permutation") %>%
       set_mode("classification"),
     recipe_func = function(data) {
       recipe(FUTSUPNO ~ ., data = data) %>%
         step_dummy(all_nominal_predictors()) %>%
         step_zv(all_predictors()) %>%
-        step_smote(FUTSUPNO, over_ratio = tune()) # <<< SMOTE with tunable ratio
+        step_smote(FUTSUPNO, over_ratio = 0.8)
     },
-    grid_func = function() { 
-      grid_space_filling(mtry(range = c(2, 25)), min_n(range = c(2, 20)), over_ratio(), size = 15) 
-    }
+    param_grid = parameters(mtry(range = c(2, 25)), min_n(range = c(2, 20)))
   ),
-  
-  # --- 5. RANDOM FOREST: Manual Class Weights (THE WINNING MODEL) ---
+
   list(
-    name = "Experiment_RF_ManualWeights",
+    name = "Experiment_6_RF_ManualWeights",
     model_spec = rand_forest(mtry = tune(), min_n = tune()) %>%
       set_engine(
         "ranger",
@@ -2138,31 +2143,52 @@ experiment_configs <- list(
         step_dummy(all_nominal_predictors()) %>%
         step_zv(all_predictors())
     },
-    grid_func = function() { 
-      grid_space_filling(mtry(range = c(2, 25)), min_n(range = c(2, 20)), size = 15) 
-    }
+    param_grid = parameters(mtry(range = c(2, 25)), min_n(range = c(2, 20)))
   ),
-  
-  # --- 6. XGBOOST: Baseline (for comparison) ---
+
+
+  # ===================================================================
+  # --- 3. XGBOOST FAMILY ---
+  # ===================================================================
+
   list(
-    name = "Experiment_XGBoost_Baseline",
-    model_spec = boost_tree(min_n = tune(), tree_depth = tune(), learn_rate = tune()) %>% 
-      set_engine("xgboost") %>%
-      set_mode("classification"),
+    name = "Experiment_7_XGBoost_Baseline",
+    model_spec = boost_tree(
+      trees = tune(), min_n = tune(), tree_depth = tune(), learn_rate = tune()
+    ) %>%
+      set_engine("xgboost") %>% set_mode("classification"),
     recipe_func = function(data) {
       recipe(FUTSUPNO ~ ., data = data) %>%
         step_dummy(all_nominal_predictors()) %>%
         step_zv(all_predictors())
     },
-    grid_func = function() { 
-      grid_space_filling(min_n(), tree_depth(), learn_rate(), size = 15) 
-    }
+    param_grid = parameters(
+      trees(range = c(100, 1000)), min_n(), tree_depth(), learn_rate()
+    )
   ),
-  
-  # --- 7. XGBOOST: Manual Case Weights ---
+
   list(
-    name = "Experiment_XGBoost_ManualWeights",
-    model_spec = boost_tree(min_n = tune(), tree_depth = tune(), learn_rate = tune()) %>%
+    name = "Experiment_8_XGBoost_SMOTE",
+    model_spec = boost_tree(
+      trees = tune(), min_n = tune(), tree_depth = tune(), learn_rate = tune()
+    ) %>%
+      set_engine("xgboost") %>% set_mode("classification"),
+    recipe_func = function(data) {
+      recipe(FUTSUPNO ~ ., data = data) %>%
+        step_dummy(all_nominal_predictors()) %>%
+        step_zv(all_predictors()) %>%
+        step_smote(FUTSUPNO, over_ratio = 0.8)
+    },
+    param_grid = parameters(
+      trees(range = c(100, 1000)), min_n(), tree_depth(), learn_rate()
+    )
+  ),
+
+  list(
+    name = "Experiment_9_XGBoost_ManualWeights",
+    model_spec = boost_tree(
+      trees = tune(), min_n = tune(), tree_depth = tune(), learn_rate = tune()
+    ) %>%
       set_engine("xgboost", scale_pos_weight = !!xgb_weight_value) %>%
       set_mode("classification"),
     recipe_func = function(data) {
@@ -2170,26 +2196,9 @@ experiment_configs <- list(
         step_dummy(all_nominal_predictors()) %>%
         step_zv(all_predictors())
     },
-    grid_func = function() { 
-      grid_space_filling(min_n(), tree_depth(), learn_rate(), size = 15) 
-    }
-  ),
-  
-  # --- 8. XGBOOST: With SMOTE ---
-  list(
-    name = "Experiment_XGBoost_SMOTE",
-    model_spec = boost_tree(min_n = tune(), tree_depth = tune(), learn_rate = tune()) %>% 
-      set_engine("xgboost") %>% 
-      set_mode("classification"),
-    recipe_func = function(data) {
-      recipe(FUTSUPNO ~ ., data = data) %>%
-        step_dummy(all_nominal_predictors()) %>%
-        step_zv(all_predictors()) %>%
-        step_smote(FUTSUPNO, over_ratio = tune())
-    },
-    grid_func = function() { 
-      grid_space_filling(min_n(), tree_depth(), learn_rate(), over_ratio(), size = 15) 
-    }
+    param_grid = parameters(
+      trees(range = c(100, 1000)), min_n(), tree_depth(), learn_rate()
+    )
   )
 )
 
@@ -2221,12 +2230,14 @@ for (config in experiment_configs) {
     add_model(current_model_spec)
 
   set.seed(42)
-  tune_results <- tune_grid(
+  tune_results <- tune_bayes(
     current_workflow,
     resamples = cv_folds,
-    grid = current_grid,
+    param_info = config$param_grid, # Verwenden Sie das neue param_grid
+    initial = 10,                  # Startet mit 10 zufälligen Kombinationen
+    iter = 30,                     # Führt 30 intelligente Iterationen durch
     metrics = metric_set_sens_spec,
-    control = control_grid(save_pred = TRUE, verbose = FALSE)
+    control = bayes_ctrl           # Verwendet die vordefinierte Kontrolle
   )
   
   best_params <- select_best(tune_results, metric = "roc_auc")
