@@ -173,7 +173,7 @@ ggsave(file.path(output_dir, "final_test_roc.png"), roc_plot)
 
 
 # ==============================================================================
-# 6. Save Artifacts for GUI
+# 6. Save Artifacts for GUI (Model & SHAP)
 # ==============================================================================
 cat("--- 6. Saving Model Artifacts ---\n")
 
@@ -187,3 +187,17 @@ saveRDS(final_threshold, file.path(output_dir, "final_threshold.rds"))
 saveRDS(test_data, file.path(output_dir, "test_data_subset.rds"))
 
 cat("\nSUCCESS: Final model and threshold saved to", output_dir, "\n")
+
+
+source("scripts_production/00_utils_shap.R") # Load the utility
+
+cat("Generating SHAP background data (Offline Optimization)...\n")
+shap_background <- prepare_shap_background(
+  final_workflow = final_fit,
+  training_data = train_data, # Use training data for the baseline
+  n_samples = 100 # 100-200 is a good balance for speed/accuracy
+)
+
+saveRDS(shap_background, file.path(output_dir, "shap_background.rds"))
+
+cat("\nSUCCESS: Final model, threshold, and SHAP background saved to", output_dir, "\n")
