@@ -197,7 +197,7 @@ cat("Generating SHAP background data (Offline Optimization)...\n")
 shap_background <- prepare_shap_background(
   final_workflow = final_fit,
   training_data = train_data, # Use training data for the baseline
-  n_samples = 100 # 100-200 is a good balance for speed/accuracy
+  n_samples = 200 # 100-200 is a good balance for speed/accuracy
 )
 
 saveRDS(shap_background, file.path(output_dir, "shap_background.rds"))
