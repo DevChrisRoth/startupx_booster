@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Booster</title>
+    <style>
+      :root {
+        --primary-black: #000000;
+        --accent-turquoise: #40e0d0; /* Turquoise color */
+        --bg-color: #ffffff;
+        --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--primary-black);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+        background: white;
+        padding: 20px;
+        /* Optional: visual boundary similar to paper edge */
+        position: relative;
+      }
+
+      /* --- Header Section --- */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        width: 20%;
+      }
+
+      .logo-section img {
+        scale: 2;
+        translate: 50px;
+        width: 80px;
+        height: auto;
+      }
+
+      .title-section {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      h1 {
+        font-weight: 400;
+        font-size: 5rem;
+        letter-spacing: 1px;
+        font-family: "Brush Script MT", cursive, var(--font-main); /* Handwriting feel for title */
+      }
+
+      .user-section {
+        width: 20%;
+        text-align: right;
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .close-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-bottom: 5px;
+        line-height: 1;
+      }
+
+      /* --- Progress Bar --- */
+      .progress-bar {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .progress-step {
+        height: 12px;
+        flex: 1;
+        border: 1px solid var(--primary-black);
+      }
+
+      /* First two are filled black per sketch */
+      .progress-step.filled {
+        background-color: var(--primary-black);
+      }
+
+      /* --- Main Content --- */
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+      }
+
+      h2 {
+        font-weight: 400;
+        margin-bottom: 40px;
+        font-size: 1.6rem;
+      }
+
+      .question-block {
+        margin-bottom: 40px;
+      }
+
+      .question-label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-style: italic;
+      }
+
+      /* --- Component: Counter Input --- */
+      .counter-wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--primary-black);
+        width: fit-content;
+      }
+
+      .counter-btn {
+        background: none;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .counter-display {
+        padding: 10px 20px;
+        border-left: 1px solid var(--primary-black);
+        border-right: 1px solid var(--primary-black);
+        font-weight: bold;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      /* --- Component: Segmented Control (Likert) --- */
+      .segmented-control {
+        display: inline-flex;
+        border: 1px solid var(--primary-black);
+        width: 100%;
+        max-width: 700px;
+      }
+
+      .segmented-option {
+        flex: 1;
+        background: none;
+        border: none;
+        border-right: 1px solid var(--primary-black);
+        padding: 12px 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+        text-align: center;
+      }
+
+      .segmented-option:last-child {
+        border-right: none;
+      }
+
+      .segmented-option:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Active State (Turquoise) */
+      .segmented-option.active {
+        background-color: var(--accent-turquoise);
+      }
+
+      /* Smaller Segmented Control */
+      .segmented-control.small {
+        max-width: 350px;
+      }
+
+      .navigation-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        width: 60px;
+        height: 60px;
+        border: 1px solid var(--primary-black);
+        border-radius: 50%; /* Circle */
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+      }
+
+
+      .next-label {
+        font-size: 1.1rem;
+      }
+
+      /* Hand-drawn connecting lines simulation (optional, kept subtle) */
+      .dashed-line {
+        position: absolute;
+        border-bottom: 1px dashed #ccc;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo-section">
+          <!-- Replace with your actual png file path -->
+          <img src="startupXboosterLogo.png" alt="Rocket Lightbulb Logo" />
+        </div>
+        <h1>Startup Booster</h1>
+        <div class="user-section">
+          <span class="close-icon">✕</span>
+          <span>Quit Test</span>
+        </div>
+      </header>
+
+      <!-- Black Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress-step filled"></div>
+        <div class="progress-step filled"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <main>
+
+        <!-- Back Circle -->
+        <button class="navigation-btn">&lt;</button>
+
+        <!-- Title -->
+        <section>
+          <h2>2. Worksituation & Household income</h2>
+
+          <!-- Question 1: Counter -->
+          <div class="question-block">
+            <label class="question-label">• some random Question?</label>
+            <div class="counter-wrapper">
+              <button class="counter-btn">-</button>
+              <div class="counter-display">18</div>
+              <button class="counter-btn">+</button>
+            </div>
+          </div>
+
+          <!-- Question 2: Large Likert Scale -->
+          <div class="question-block">
+            <label class="question-label">• some random Question?</label>
+            <div class="segmented-control">
+              <button class="segmented-option">strongly disagree</button>
+              <!-- Highlighted Turquoise per sketch -->
+              <button class="segmented-option active">somewhat disagree</button>
+              <button class="segmented-option">neither</button>
+              <button class="segmented-option">somewhat agree</button>
+              <button class="segmented-option">strongly agree</button>
+            </div>
+          </div>
+
+          <!-- Question 3: Small Likert Scale -->
+          <div class="question-block">
+            <label class="question-label">• some random Question?</label>
+            <div class="segmented-control small">
+              <button class="segmented-option">disagree</button>
+              <!-- Highlighted Turquoise per sketch -->
+              <button class="segmented-option active">neither</button>
+              <button class="segmented-option">agree</button>
+            </div>
+          </div>
+        </section>
+
+          <!-- Next Circle + Text -->
+          <button class="navigation-btn">&gt;</button>
+      </main>
+    </div>
+  </body>
+</html>
