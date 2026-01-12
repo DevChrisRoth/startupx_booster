@@ -183,14 +183,6 @@ plot_intention_by_cat(
   xlab = "Has a Clear Vision for the Future"
 )
 
-plot_intention_by_cat(
-  student_data,
-  INDSUPyy,
-  title = "Intentions by Perceived Societal Support (Students Only)",
-  subtitle = "Societal support for independence is linked to higher student intention.",
-  xlab = "Society Supports Independent Thought and Action?"
-)
-
 # --- Demographic Drivers ---
 ggplot(student_data, aes(x = FUTSUPNO, y = age, fill = FUTSUPNO)) +
   geom_boxplot() +
