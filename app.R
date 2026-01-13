@@ -43,44 +43,169 @@ source("scripts_production/00_utils_shap.R")
 likert_levels <- c("Strongly Disagree", "Somewhat Disagree", "Neither", 
                    "Somewhat Agree", "Strongly Agree", "Refused_Answer", "Not_Applicable")
 
-# Recommendation Logic
-get_recommendations <- function(shap_res) {
+# Recommendation Logic (EDA-Informed Version)
+get_recommendations <- function(shap_res, input_data) {
   if (is.null(shap_res)) {
     return("No data available for recommendations.")
   }
   
+  # Identify the feature with the lowest (most negative) SHAP value
   lowest_var <- shap_res %>%
     arrange(shap_value) %>%
     slice(1) %>%
     pull(feature)
   
-  recs <- list(
-    "FRFAILyy" = c("1. View failure as a learning opportunity.", "2. Start with small, calculated risks.", "3. Talk to experienced mentors about their setbacks."),
-    "SUSKILyy" = c("1. Use online courses for targeted upskilling.", "2. Look for a co-founder with complementary skills.", "3. Practice pitching your idea to friends."),
-    "OPPORTyy" = c("1. Network more actively in your local startup scene.", "2. Investigate current market trends and niches.", "3. Brainstorm solutions for everyday problems that annoy you."),
-    "KNOWENyy" = c("1. Attend startup events and meetups.", "2. Connect specifically with founders on LinkedIn.", "3. Join online founder communities."),
-    "EASYSTyy" = c("1. Inform yourself at local authorities about founding steps.", "2. Look for simplifications or digital founding paths.", "3. Get support from chambers of commerce or incubation centers."),
-    "GEMHHINC" = c("1. Create a solid financial plan.", "2. Check possibilities for part-time founding.", "3. Look for cost-effective resources (bootstrapping)."),
-    "GEMEDUC" = c("1. Use specialized training for founders.", "2. Seek mentors with industry experience.", "3. Learn by doing through small projects."),
-    "cphhinc" = c("1. Focus on cost-efficient business models.", "2. Use government aid for founders.", "3. Rebuild financial reserves slowly."),
-    "OPPISMyy" = c("1. Train your eye for positive opportunities.", "2. Read success stories for inspiration.", "3. Surround yourself with optimistic people."),
-    "PROACTyy" = c("1. Set daily small, achievable goals.", "2. Establish a 'do it now' mentality.", "3. Break large tasks into small steps."),
-    "CREATIVyy" = c("1. Hold brainstorming sessions in the team.", "2. Change perspectives more often when solving problems.", "3. Use creativity techniques like Design Thinking."),
-    "VISIONyy" = c("1. Define your long-term goals in writing.", "2. Create a vision board for your company.", "3. Reflect on your personal values."),
-    "age" = c("1. Use your life experience as a strength.", "2. Stay curious and open to new technologies.", "3. Network with founders of other generations."),
-    "gender" = c("1. Use specific support programs (e.g., for female founders).", "2. Look for role models in your peer group.", "3. Build a diverse network."),
-    "hhsize" = c("1. Organize your time management strictly.", "2. Involve family/partner in your plans.", "3. Create fixed working hours and spaces."),
-    "ctryalp" = c("1. Investigate the local startup ecosystem closely.", "2. Network internationally.", "3. Use local advantages and subsidies.")
-  )
+  # Get the actual value the user provided for this feature
+  user_val <- as.character(input_data[[lowest_var]])
   
-  default_rec <- c("1. Review your business plan for weaknesses.", "2. Get general feedback from potential customers.", "3. Analyze the market again for needs.")
+  # Default generic advice
+  recs <- c("1. Review your business plan for weaknesses.", "2. Get general feedback from potential customers.", "3. Analyze the market again for needs.")
   
-  selected_recs <- if (lowest_var %in% names(recs)) recs[[lowest_var]] else default_rec
+  # Dynamic Advice Logic based on EDA Findings
+  if (lowest_var == "age") {
+    age_val <- as.numeric(user_val)
+    if (age_val <= 25) {
+      # EDA: Skewed young distribution, high potential but lack of experience.
+      recs <- c(
+        "1. Use your youth as an asset: You have fewer obligations and more time to experiment.",
+        "2. Lack of experience is the main barrier for your age group—counter this by attending practical workshops.",
+        "3. Connect with older mentors or alumni to bridge the experience gap."
+      )
+    } else {
+      # EDA: Older students/founders are rarer but often more intentional.
+      recs <- c(
+        "1. Leverage your professional experience—it's your competitive advantage over younger students.",
+        "2. Don't let the 'stability' of traditional employment hold you back from your vision.",
+        "3. Network with the younger generation to find co-founders with 'digital native' skills."
+      )
+    }
+    
+  } else if (lowest_var == "FRFAILyy") {
+    # EDA: 50/50 split. Fear is a massive blocker.
+    if (user_val == "Agree") {
+      recs <- c(
+        "1. You are not alone: 50% of students share this fear. Attend 'Fuckup Nights' to hear how others bounced back.",
+        "2. Start a 'Micro-Project': A low-risk side hustle helps you practice without the fear of total ruin.",
+        "3. Reframe failure: In the startup world, it's just 'data collection', not a personal flaw."
+      )
+    }
+    
+  } else if (lowest_var == "SUSKILyy") {
+    # EDA: 63% of students disagree they have skills. Strongest lever to pull.
+    if (user_val == "Disagree") {
+      recs <- c(
+        "1. Confidence Gap: Most students feel this way. You don't need to be an expert to start.",
+        "2. Focus on 'Learning by Doing': Join a hackathon or a bootcamp to build skills fast.",
+        "3. Find a co-founder: If you lack tech skills, find a dev. If you lack sales skills, find a hustler."
+      )
+    }
+    
+  } else if (lowest_var == "OPPORTyy") {
+    # EDA: Strong predictor.
+    if (user_val == "Disagree") {
+      recs <- c(
+        "1. Opportunities are often disguised as annoyances. What bothers you in your daily student life?",
+        "2. Read industry reports or visit the StartUp Campus to see what problems others are solving.",
+        "3. Look for 'boring' problems in traditional industries rather than just chasing the next big tech trend."
+      )
+    }
+    
+  } else if (lowest_var == "KNOWENyy") {
+    # EDA: Knowing an entrepreneur is a huge booster.
+    if (user_val == "None") {
+      recs <- c(
+        "1. This is the easiest fix: Attend one networking event this month.",
+        "2. Connect with university alumni who founded companies—they love helping current students.",
+        "3. Follow founders on LinkedIn to normalize the idea of entrepreneurship in your daily feed."
+      )
+    }
+    
+  } else if (lowest_var == "GEMHHINC") {
+    # EDA: Income matters less for students than general pop.
+    if (user_val == "Lowest Third") {
+      recs <- c(
+        "1. Good news: Data shows student success isn't tied to family wealth. Focus on your vision.",
+        "2. Look for university grants and scholarships specifically for founders.",
+        "3. Embrace 'Bootstrapping'—build your business using time and skill rather than cash."
+      )
+    } else {
+      recs <- c(
+        "1. Use your financial stability to take calculated risks that others can't.",
+        "2. Set a strict budget for your project to avoid burning personal savings.",
+        "3. Consider investing in paid prototypes or market research."
+      )
+    }
+    
+  } else if (lowest_var == "GEMEDUC") {
+    # EDA: Peak intention is during transition (Some Secondary/Post-Secondary).
+    if (user_val %in% c("Some Secondary", "Post-Secondary")) {
+      recs <- c(
+        "1. You are in the 'Golden Phase': Students in transition are statistically most likely to start.",
+        "2. Use university resources (labs, advisors) now before you graduate and lose access.",
+        "3. Don't wait for the degree—start validating your idea alongside your studies."
+      )
+    } else {
+      # Graduate Experience / Secondary Degree
+      recs <- c(
+        "1. Don't let your degree limit you to traditional career paths.",
+        "2. Use your specialized academic knowledge to solve complex, high-value problems.",
+        "3. If you are working, consider starting as a 'weekend founder'."
+      )
+    }
+    
+  } else if (lowest_var == "gender") {
+    # EDA: Gender gap exists.
+    if (user_val == "Female") {
+      recs <- c(
+        "1. The ecosystem needs you: Apply for female-founder specific grants and accelerators.",
+        "2. Seek mentorship from successful women who have navigated these specific barriers.",
+        "3. Build a support network—confidence is often the only thing missing, not competence."
+      )
+    }
+    
+  } else if (lowest_var == "PROACTyy") {
+    # EDA: "Dreamers" (Agree they are passive) still have high intention but need a push.
+    if (user_val %in% c("Somewhat Agree", "Strongly Agree")) {
+      recs <- c(
+        "1. You have the desire (Dreamer), now you need the habit. Do one small task for your business every day.",
+        "2. Find an 'Accountability Partner' to keep you moving forward.",
+        "3. Stop planning and start executing—imperfect action is better than perfect inaction."
+      )
+    }
+    
+  } else if (lowest_var == "CREATIVyy") {
+    # EDA: Pragmatic Executors (Low Innovation) are also successful.
+    if (user_val %in% c("Strongly Disagree", "Somewhat Disagree")) {
+      recs <- c(
+        "1. You don't need to reinvent the wheel. Focus on 'Operational Excellence' instead of novelty.",
+        "2. Consider bringing an existing business model to a new market (Copycat Strategy).",
+        "3. Your strength is execution—partner with a creative visionary who needs a builder."
+      )
+    }
+    
+  } else if (lowest_var == "VISIONyy") {
+    # EDA: Long-term plan is a strong driver.
+    if (user_val %in% c("Strongly Disagree", "Somewhat Disagree")) {
+      recs <- c(
+        "1. Try to visualize where you want to be in 5 years. Does a 9-to-5 job fit that picture?",
+        "2. Entrepreneurship is a marathon. Define your personal 'Why' to keep you going.",
+        "3. Treat your startup idea as a career path, not just a hobby."
+      )
+    }
+  } else if (lowest_var == "cphhinc") {
+    # EDA: Economic shocks (positive or negative) catalyze action.
+    recs <- c(
+      "1. Economic changes create new needs. How has the world changed, and what new problems can you solve?",
+      "2. If income decreased: Necessity is the mother of invention. Use this drive.",
+      "3. If income increased: Use the safety net to take a risk you couldn't take before."
+    )
+  }
   
+  # Return the HTML
   HTML(paste0(
     "<strong>The strongest negative influence factor was '", lowest_var, "'.</strong>",
     "We recommend the following steps:<br>",
-    "<ul style='width: fit-content; list-style-type: none;'>", paste0("<li>", selected_recs, "</li>", collapse = ""), "</ul>"
+    "<ul style='width: fit-content; list-style-type: none;'>", paste0("<li>", recs, "</li>", collapse = ""), "</ul>"
   ))
 }
 
@@ -488,7 +613,8 @@ server <- function(input, output, session) {
   # --- Recommendations ---
   output$recommendation_text <- renderUI({
     req(shap_results())
-    get_recommendations(shap_results())
+    req(current_data())
+    get_recommendations(shap_results(), current_data())
   })
   
 }
