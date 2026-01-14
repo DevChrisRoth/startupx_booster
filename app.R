@@ -238,7 +238,7 @@ ui <- fluidPage(
                      # ctryalp: Using standard input because list is long
                      ui_standard_input(
                        selectInput(inputId= "ctryalp", label = NULL, width = "100%",
-                                   choices = list("Germany (DE)" = "Germany (DE)", "Spain (ES)" = "Spain (ES)", "Poland (PL)" = "Poland (PL)", "Chile (CL)" = "Chile (CL)", "France (FR)" = "France (FR)",  "Saudi Arabia (SA)" = "Saudi Arabia (SA)", "(Other)" = "Other")),
+                                   choices = list("Germany (DE)" = "Germany (DE)", "Spain (ES)" = "Spain (ES)", "Poland (PL)" = "Poland (PL)", "Chile (CL)" = "Chile (CL)", "France (FR)" = "France (FR)",  "Saudi Arabia (SA)" = "Saudi Arabia (SA)")),
                        "In which country do you reside?"
                      ),
                      
@@ -251,7 +251,7 @@ ui <- fluidPage(
                      
                      # age: Standard numeric input
                      ui_standard_input(
-                       numericInput(inputId= "age", label = NULL, value = NULL, min = 18, max = 64, width = "100px"),
+                       numericInput(inputId= "age", label = NULL, value = 21, min = 18, max = 64, width = "100px"),
                        "What is your age in years?"
                      ),
                      

@@ -1,7 +1,7 @@
 data/
 suplementary_material/
 /EDA/output/
-
+*.pptx
 GEM2021APSGlobalIndividualLevelData_15Feb2023.csv
 .Rproj.user
 *.Rhistory

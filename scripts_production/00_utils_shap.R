@@ -26,7 +26,8 @@ variable_labels <- c(
   
   # Semantic Fixes (Negative/Inverse Questions)
   "OPPISMyy"  = "Misses Opportunities", # Corrected semantic meaning
-  "PROACTyy"  = "Hesitant to Act"       # Corrected semantic meaning
+  "PROACTyy"  = "Hesitant to Act" ,      # Corrected semantic meaning
+  "WBINC"     = "Country"
 )
 
 # --- 1. OFFLINE: Background Data Preparation ---
